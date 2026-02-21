@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ya6ijv5sbqr0"]
+
+[ext_resource type="FontFile" uid="uid://qwjhqnb55kx8" path="res://Fuentes/Orbitron-SemiBold.ttf" id="1_amlv4"]
+
+[resource]
+default_font = ExtResource("1_amlv4")

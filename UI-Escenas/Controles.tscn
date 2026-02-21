@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://47bsateleo1u"]
+
+[ext_resource type="Script" uid="uid://base7r85wc8ju" path="res://Scripts/Controles.gd" id="1_0m8xt"]
+[ext_resource type="Texture2D" uid="uid://ci8e2iqn2mtcq" path="res://UI/Controles.png" id="1_hdt5p"]
+[ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="2_0r6h3"]
+[ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="2_dwwl4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndoql"]
+atlas = ExtResource("2_dwwl4")
+region = Rect2(0, 0, 142, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lcj2"]
+atlas = ExtResource("2_dwwl4")
+region = Rect2(0, 284, 142, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83sh2"]
+atlas = ExtResource("2_dwwl4")
+region = Rect2(0, 142, 142, 142)
+
+[node name="Controles" type="CanvasLayer"]
+script = ExtResource("1_0m8xt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0r6h3")
+texture = ExtResource("1_hdt5p")
+
+[node name="Button" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_left = 0.931
+anchor_top = 0.886
+anchor_right = 0.931
+anchor_bottom = 0.886
+offset_left = -71.6801
+offset_top = -70.92
+offset_right = 75.3199
+offset_bottom = 71.08
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.52299, 0.52299)
+pivot_offset = Vector2(71, 71)
+texture_normal = SubResource("AtlasTexture_ndoql")
+texture_pressed = SubResource("AtlasTexture_2lcj2")
+texture_hover = SubResource("AtlasTexture_83sh2")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

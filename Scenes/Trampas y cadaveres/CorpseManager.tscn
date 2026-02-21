@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://crjofoje1f7su"]
+
+[ext_resource type="Script" uid="uid://dq6q82q075ge2" path="res://Code/corpse_manager.gd" id="1_b12sk"]
+[ext_resource type="PackedScene" uid="uid://cifwty7rmmxte" path="res://Scenes/Trampas y cadaveres/Cadaveres/Conjelado.tscn" id="2_ur2tv"]
+
+[node name="CorpseManager" type="Node2D"]
+script = ExtResource("1_b12sk")
+corpse_hielo = ExtResource("2_ur2tv")

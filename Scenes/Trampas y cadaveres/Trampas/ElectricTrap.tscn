@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://kawp3f3yobva"]
+
+[ext_resource type="Script" uid="uid://bljwdt4b80oel" path="res://Code/zona_de_muerte.gd" id="1_ajob0"]
+[ext_resource type="Texture2D" uid="uid://bccxriesdhhbb" path="res://Assets/Trampas/sprite-trampa-electrica.png" id="2_ncch3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_niu5o"]
+size = Vector2(129, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ko2w"]
+atlas = ExtResource("2_ncch3")
+region = Rect2(400, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lafft"]
+atlas = ExtResource("2_ncch3")
+region = Rect2(800, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwqrf"]
+atlas = ExtResource("2_ncch3")
+region = Rect2(1200, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw3kf"]
+atlas = ExtResource("2_ncch3")
+region = Rect2(2000, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0q5n"]
+atlas = ExtResource("2_ncch3")
+region = Rect2(2800, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwxgf"]
+atlas = ExtResource("2_ncch3")
+region = Rect2(3600, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n82mn"]
+atlas = ExtResource("2_ncch3")
+region = Rect2(4000, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcski"]
+atlas = ExtResource("2_ncch3")
+region = Rect2(4400, 0, 400, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_we825"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ko2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lafft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwqrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw3kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0q5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwxgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n82mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcski")
+}],
+"loop": true,
+"name": &"Rayp",
+"speed": 10.0
+}]
+
+[node name="ElectricTrap" type="Area2D"]
+script = ExtResource("1_ajob0")
+death_type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, -0.5)
+scale = Vector2(0.465, 1)
+shape = SubResource("RectangleShape2D_niu5o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(1.5, 1)
+scale = Vector2(0.4925, 0.306667)
+sprite_frames = SubResource("SpriteFrames_we825")
+animation = &"Rayp"
+autoplay = "Rayp"
+frame_progress = 0.176305
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

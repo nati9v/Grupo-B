@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://yaj5phaghh6l"]
+
+[ext_resource type="Script" uid="uid://bjhbo2hs2ni38" path="res://Code/interact_button.gd.gd" id="1_vlakt"]
+[ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="2_qskdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu3fx"]
+size = Vector2(86, 87)
+
+[node name="Botón" type="Area2D" groups=["interactable"]]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_vlakt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qskdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_gu3fx")

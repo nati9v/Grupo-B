@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=3 uid="uid://rsr3y7ehspr4"]
+
+[ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="1_ibnve"]
+[ext_resource type="Script" uid="uid://dvl82iacuf2s8" path="res://Scripts/Pausa.gd" id="2_ab0cg"]
+[ext_resource type="Texture2D" uid="uid://d4kh3omecmlhy" path="res://UI/fondo-ui.png" id="2_x5uij"]
+[ext_resource type="FontFile" uid="uid://qwjhqnb55kx8" path="res://Fuentes/Orbitron-SemiBold.ttf" id="3_rkbls"]
+
+[node name="Pausa" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("2_ab0cg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0392157, 0.0509804, 0.0705882, 0.72549)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -219.0
+offset_right = 309.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.840002, 0.840002)
+pivot_offset = Vector2(314, 214)
+texture = ExtResource("2_x5uij")
+expand_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -226.0
+offset_right = 204.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_shadow_color = Color(0.501961, 0.792157, 0.819608, 0.552941)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("3_rkbls")
+theme_override_font_sizes/font_size = 50
+text = "PAUSA"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.5
+offset_top = -174.0
+offset_right = 274.5
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.799999, 0.799999)
+pivot_offset = Vector2(284, 205.625)
+theme_override_constants/separation = 7
+
+[node name="menú" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ibnve")
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "MENÚ"
+flat = true
+
+[node name="reanudar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ibnve")
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "REANUDAR"
+flat = true
+
+[node name="reiniciar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ibnve")
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "REINICIAR"
+flat = true
+
+[node name="ajustes" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ibnve")
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "AJUSTES"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/menú" to="." method="_on_menú_pressed"]
+[connection signal="pressed" from="VBoxContainer/reanudar" to="." method="_on_reanudar_pressed"]
+[connection signal="pressed" from="VBoxContainer/reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/ajustes" to="." method="_on_ajustes_pressed"]

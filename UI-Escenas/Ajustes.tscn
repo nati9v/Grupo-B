@@ -1,0 +1,223 @@
+[gd_scene load_steps=14 format=3 uid="uid://cgmhiol40t3we"]
+
+[ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="1_rkwl0"]
+[ext_resource type="Texture2D" uid="uid://d4kh3omecmlhy" path="res://UI/fondo-ui.png" id="2_jqna3"]
+[ext_resource type="Script" uid="uid://dh6nig2innu20" path="res://Scripts/Ajustes.gd" id="2_k6ssn"]
+[ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="3_0bijb"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jqna3"]
+color = Color(0.317647, 0.752941, 0.85098, 1)
+thickness = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6ssn"]
+atlas = ExtResource("3_0bijb")
+region = Rect2(284, 0, 142, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3txm5"]
+atlas = ExtResource("3_0bijb")
+region = Rect2(284, 284, 142, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thpcg"]
+atlas = ExtResource("3_0bijb")
+region = Rect2(142, 0, 142, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo6d8"]
+atlas = ExtResource("3_0bijb")
+region = Rect2(142, 284, 142, 142)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6ssn"]
+bg_color = Color(0.431373, 0.462745, 0.47451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.317647, 0.752941, 0.85098, 1)
+corner_detail = 10
+expand_margin_left = 8.0
+expand_margin_right = 6.0
+shadow_color = Color(0.501961, 0.792157, 0.819608, 0.552941)
+shadow_size = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bijb"]
+atlas = ExtResource("3_0bijb")
+region = Rect2(0, 0, 142, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8pxv"]
+atlas = ExtResource("3_0bijb")
+region = Rect2(0, 284, 142, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4quc6"]
+atlas = ExtResource("3_0bijb")
+region = Rect2(0, 142, 142, 142)
+
+[node name="Ajustes" type="CanvasLayer"]
+script = ExtResource("2_k6ssn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0392157, 0.0509804, 0.0705882, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -219.0
+offset_right = 309.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jqna3")
+expand_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -256.0
+offset_right = 204.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rkwl0")
+theme_override_colors/font_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_shadow_color = Color(0.501961, 0.792157, 0.819608, 0.552941)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 50
+text = "AJUSTES"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.5
+offset_top = -205.0
+offset_right = 274.5
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.799999, 0.799999)
+pivot_offset = Vector2(284, 205.625)
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rkwl0")
+theme_override_colors/font_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_font_sizes/font_size = 55
+text = "MÚSICA Y SONIDO"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_jqna3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="musica" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture_normal = SubResource("AtlasTexture_k6ssn")
+texture_pressed = SubResource("AtlasTexture_3txm5")
+stretch_mode = 0
+
+[node name="sfx" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_thpcg")
+texture_pressed = SubResource("AtlasTexture_fo6d8")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 26
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_rkwl0")
+theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
+theme_override_font_sizes/font_size = 55
+text = "IDIOMA"
+
+[node name="idioma" type="OptionButton" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("1_rkwl0")
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_k6ssn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k6ssn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6ssn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k6ssn")
+alignment = 1
+icon_alignment = 1
+text_direction = 1
+selected = 184
+item_count = 2
+popup/item_0/text = "ESPAÑOL"
+popup/item_0/id = 0
+popup/item_1/text = "En camino"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+
+[node name="controles" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rkwl0")
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "CONTROLES"
+flat = true
+
+[node name="ayuda" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rkwl0")
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.752941, 0.85098, 1)
+theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "CENTRO DE AYUDA"
+flat = true
+
+[node name="cerrar" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = 188.0
+offset_right = 73.5
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.52299, 0.52299)
+pivot_offset = Vector2(71, 71)
+texture_normal = SubResource("AtlasTexture_0bijb")
+texture_pressed = SubResource("AtlasTexture_d8pxv")
+texture_hover = SubResource("AtlasTexture_4quc6")
+
+[connection signal="pressed" from="VBoxContainer/controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="cerrar" to="." method="_on_cerrar_pressed"]

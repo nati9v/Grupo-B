@@ -1,0 +1,206 @@
+[gd_scene load_steps=26 format=3 uid="uid://dlsver1x6nwsc"]
+
+[ext_resource type="Script" uid="uid://cvvy76ckwcq10" path="res://Scripts/Menu.gd" id="1_3kf3n"]
+[ext_resource type="Texture2D" uid="uid://bmm2vxq1i07cb" path="res://UI/Main Menu/marco.png" id="2_6pedr"]
+[ext_resource type="Texture2D" uid="uid://gf7ndobwjxwq" path="res://UI/Botones/btns-maim menu.png" id="3_syfuq"]
+[ext_resource type="Script" uid="uid://babuwufbrn0uw" path="res://Scripts/anim-btn.gd" id="4_s2c3o"]
+[ext_resource type="Texture2D" uid="uid://bum886184msom" path="res://UI/Main Menu/LOGO ESTUDIO.png" id="5_ma218"]
+[ext_resource type="Texture2D" uid="uid://b26d5x8q25f7f" path="res://UI/Main Menu/INMORTAL.png" id="6_idohh"]
+[ext_resource type="PackedScene" uid="uid://cgmhiol40t3we" path="res://UI-Escenas/Ajustes.tscn" id="7_7k0b2"]
+[ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="8_04wdr"]
+
+[sub_resource type="Curve" id="Curve_idohh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.48538, 1), 0.0, 0.0, 0, 0, Vector2(0.979532, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wfhf6"]
+curve = SubResource("Curve_idohh")
+
+[sub_resource type="Curve" id="Curve_3jcrr"]
+_data = [Vector2(0.0438597, 0), 0.0, 0.0, 0, 0, Vector2(0.538012, 1), 0.0, 0.0, 0, 0, Vector2(0.988304, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_aobxe"]
+curve = SubResource("Curve_3jcrr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3jcrr"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(800, 1, 1)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 9.8, 0)
+scale_min = 0.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_aobxe")
+color = Color(0.180392, 0.572549, 0.639216, 1)
+alpha_curve = SubResource("CurveTexture_wfhf6")
+turbulence_noise_speed = Vector3(0, 50, 0)
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.242
+turbulence_initial_displacement_min = -16.1
+turbulence_initial_displacement_max = 29.1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2c3o"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(0, 0, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syfuq"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(0, 264, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma218"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(0, 132, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfhf6"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(550, 0, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jcrr"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(550, 264, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idohh"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(550, 132, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aobxe"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(1100, 0, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab40c"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(1100, 264, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjh0l"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(1100, 132, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qki4b"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(1650, 0, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byewe"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(1650, 264, 550, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8aa6"]
+atlas = ExtResource("3_syfuq")
+region = Rect2(1650, 132, 550, 132)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kf3n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0392157, 0.0509804, 0.0705882, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(168, 26)
+amount = 50
+lifetime = 10.0
+preprocess = 5.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_3jcrr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6pedr")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 83.0
+offset_top = -190.0
+offset_right = 279.0
+offset_bottom = -73.0
+grow_vertical = 0
+texture = ExtResource("5_ma218")
+expand_mode = 1
+
+[node name="Botones" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -178.0
+offset_right = 275.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.680001, 0.680001)
+pivot_offset = Vector2(280, 258)
+
+[node name="Jugar" type="TextureButton" parent="Botones"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_s2c3o")
+texture_pressed = SubResource("AtlasTexture_syfuq")
+texture_hover = SubResource("AtlasTexture_ma218")
+script = ExtResource("4_s2c3o")
+
+[node name="Ajustes" type="TextureButton" parent="Botones"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_wfhf6")
+texture_pressed = SubResource("AtlasTexture_3jcrr")
+texture_hover = SubResource("AtlasTexture_idohh")
+
+[node name="Controles" type="TextureButton" parent="Botones"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_aobxe")
+texture_pressed = SubResource("AtlasTexture_ab40c")
+texture_hover = SubResource("AtlasTexture_sjh0l")
+
+[node name="Salir" type="TextureButton" parent="Botones"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_qki4b")
+texture_pressed = SubResource("AtlasTexture_byewe")
+texture_hover = SubResource("AtlasTexture_a8aa6")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -248.0
+offset_right = 306.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_idohh")
+expand_mode = 2
+
+[node name="Ajustes" parent="." instance=ExtResource("7_7k0b2")]
+visible = false
+
+[node name="Controles" parent="." instance=ExtResource("8_04wdr")]
+visible = false
+
+[connection signal="pressed" from="Botones/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Botones/Ajustes" to="Ajustes" method="_on_ajustes_pressed"]
+[connection signal="pressed" from="Botones/Controles" to="Controles" method="_on_controles_pressed"]
+[connection signal="pressed" from="Botones/Salir" to="." method="_on_salir_pressed"]

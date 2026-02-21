@@ -1,0 +1,117 @@
+[gd_scene load_steps=17 format=3 uid="uid://gqh3ymyf15kj"]
+
+[ext_resource type="Script" uid="uid://bljwdt4b80oel" path="res://Code/zona_de_muerte.gd" id="1_hh0fp"]
+[ext_resource type="Texture2D" uid="uid://co3bgrv8d5026" path="res://Assets/Trampas/sprites-trampa-fuego.png" id="1_xco6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0fp"]
+size = Vector2(108, 251)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6l6m"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(1200, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsl2i"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(1600, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvb0i"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(2000, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cbp6"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(2400, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38l8r"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(2800, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjohv"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(3200, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqgrg"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(3600, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gx2k"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(4000, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emirf"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(4400, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kkb0"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(4800, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xygl1"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(5200, 0, 400, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mss4l"]
+atlas = ExtResource("1_xco6m")
+region = Rect2(5600, 0, 400, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5q5g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6l6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsl2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvb0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cbp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38l8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjohv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqgrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gx2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emirf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kkb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xygl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mss4l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="TrampaFuego" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_hh0fp")
+death_type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_hh0fp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.467, 0.467)
+sprite_frames = SubResource("SpriteFrames_x5q5g")
+autoplay = "default"
+frame_progress = 0.515795
+
+[connection signal="area_shape_entered" from="Area2D" to="Area2D" method="_on_area_shape_entered"]

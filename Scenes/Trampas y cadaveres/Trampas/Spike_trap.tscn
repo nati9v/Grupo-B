@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw65u1g4o2a2"]
+
+[ext_resource type="Texture2D" uid="uid://ba18m1cb0kwjo" path="res://arte/SpriteSpike.png" id="1_gfcpp"]
+[ext_resource type="Script" uid="uid://bkmx142lswh73" path="res://Scenes/Trampas y cadaveres/Trampas/Activación_de_espinas.gd" id="1_ogvtp"]
+[ext_resource type="Texture2D" uid="uid://demwpwii1xr6r" path="res://arte/Agregados/pinchos-zona1.png" id="2_4ah2a"]
+[ext_resource type="PackedScene" uid="uid://c5cmkrokx15q6" path="res://Scenes/zona_de_muerte.tscn" id="3_4ah2a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogvtp"]
+size = Vector2(256, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r52ai"]
+size = Vector2(192, 20)
+
+[node name="Spike_trap" type="Node2D"]
+script = ExtResource("1_ogvtp")
+
+[node name="Spikes" type="Sprite2D" parent="."]
+texture = ExtResource("2_4ah2a")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(7.15256e-07, -48)
+scale = Vector2(0.226563, 0.226563)
+texture = ExtResource("1_gfcpp")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_ogvtp")
+
+[node name="Zona de muerte" parent="." instance=ExtResource("3_4ah2a")]
+death_type = 4
+spawn_corpse = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona de muerte"]
+position = Vector2(0, 56)
+shape = SubResource("RectangleShape2D_r52ai")
+debug_color = Color(0.991381, 0, 0.266306, 0.42)

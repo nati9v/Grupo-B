@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d17vpmt760hel"]
+
+[sub_resource type="Animation" id="Animation_uoyb7"]
+resource_name = "move"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lt0c6"]
+_data = {
+&"move": SubResource("Animation_uoyb7")
+}
+
+[node name="RutaDePlataforma" type="AnimationPlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_lt0c6")
+}

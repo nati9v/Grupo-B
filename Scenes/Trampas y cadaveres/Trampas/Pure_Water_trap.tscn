@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://uv0iqwa64vmt"]
+
+[ext_resource type="Texture2D" uid="uid://ba5siyexrvjhq" path="res://arte/256/256-agua-p-nueva.png" id="1_2v36t"]
+[ext_resource type="PackedScene" uid="uid://c5cmkrokx15q6" path="res://Scenes/zona_de_muerte.tscn" id="2_5n2j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn44g"]
+size = Vector2(256, 20)
+
+[node name="Pure_WaterTrap" type="Node2D"]
+
+[node name="Water" type="Sprite2D" parent="."]
+texture = ExtResource("1_2v36t")
+
+[node name="Zona de muerte" parent="." instance=ExtResource("2_5n2j4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona de muerte"]
+position = Vector2(0, -56)
+shape = SubResource("RectangleShape2D_vn44g")
