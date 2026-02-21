@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dscrrr8tyxoxk"]
 
 [ext_resource type="Script" uid="uid://dlmypsqivtly3" path="res://Code/chekpoint_prueba.gd" id="1_i3j2t"]
-[ext_resource type="Texture2D" uid="uid://b386q5yxbi7jv" path="res://Assets/lab_tileset_LITE/seperated/tile005.png" id="2_i3j2t"]
+[ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="2_kyfyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14q6d"]
-size = Vector2(273, 194)
+size = Vector2(199, 253)
 
 [node name="Checkpoint" type="Area2D"]
 collision_mask = 2
@@ -12,11 +12,13 @@ script = ExtResource("1_i3j2t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
-scale = Vector2(9.625, 8.74601)
-texture = ExtResource("2_i3j2t")
+scale = Vector2(1.1, 1)
+texture = ExtResource("2_kyfyg")
+region_enabled = true
+region_rect = Rect2(1792, 256, 256, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 22)
+position = Vector2(0.5, 2.5)
 shape = SubResource("RectangleShape2D_14q6d")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
