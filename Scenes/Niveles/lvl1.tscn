@@ -367,7 +367,7 @@ tile_set = SubResource("TileSet_lgb3t")
 [node name="trampas" type="TileMapLayer" parent="TileMapLayer"]
 tile_set = SubResource("TileSet_iqlhl")
 
-[node name="Ascensor" parent="TileMapLayer" instance=ExtResource("8_lqu48")]
+[node name="Ascensor" parent="." instance=ExtResource("8_lqu48")]
 position = Vector2(25981, -1665)
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
