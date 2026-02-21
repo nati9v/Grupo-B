@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1bsg5pfa3swd"]
+[gd_scene load_steps=5 format=3 uid="uid://b5g4g7cv3jr78"]
 
-[ext_resource type="Script" uid="uid://cqfa1fdkwmise" path="res://UI-Escenas/cinematica.gd" id="1_dtv07"]
-[ext_resource type="VideoStream" uid="uid://4m4hwfnisk5" path="res://arte/INMORTAL_OGVVERSION.ogv" id="1_sv65i"]
+[ext_resource type="Script" path="res://UI-Escenas/cinematica.gd" id="1_dtv07"]
+[ext_resource type="VideoStream" path="res://arte/INMORTAL_OGVVERSION.ogv" id="1_sv65i"]
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="2_isclb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isclb"]
