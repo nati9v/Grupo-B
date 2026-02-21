@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=46 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/lvl_1.gd" id="1_oidrm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b1s7lt5sl4rpm" path="res://arte/256/256-agua-p-vieja.png" id="5_5fyxw"]
 [ext_resource type="PackedScene" uid="uid://cwmkcdv36qnnc" path="res://Scenes/pruebeteoprimus.tscn" id="7_6chae"]
 [ext_resource type="Texture2D" uid="uid://d1n2rygfwu0bu" path="res://Assets/Tilesets/Cajas-256.png" id="7_on1fg"]
+[ext_resource type="PackedScene" uid="uid://8rtcgs3pf50y" path="res://Scenes/Mecanismos/Ascensor.tscn" id="8_lqu48"]
 [ext_resource type="PackedScene" uid="uid://dscrrr8tyxoxk" path="res://Scenes/Mecanismos/Checkpoint.tscn" id="10_oidrm"]
 [ext_resource type="PackedScene" uid="uid://yaj5phaghh6l" path="res://Scenes/Mecanismos/Botón.tscn" id="11_irqd3"]
 [ext_resource type="PackedScene" uid="uid://cifwty7rmmxte" path="res://Scenes/Trampas y cadaveres/Cadaveres/Conjelado.tscn" id="12_on1fg"]
@@ -370,6 +371,9 @@ tile_set = SubResource("TileSet_iqlhl")
 
 [node name="trampas" type="TileMapLayer" parent="TileMapLayer"]
 tile_set = SubResource("TileSet_iqlhl")
+
+[node name="Ascensor" parent="TileMapLayer" instance=ExtResource("8_lqu48")]
+position = Vector2(25981, -1665)
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
