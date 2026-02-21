@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1bsg5pfa3swd"]
+[gd_scene load_steps=5 format=3 uid="uid://d1bsg5pfa3swd"]
 
-[ext_resource type="VideoStream" uid="uid://8ok8tr8r6l3e" path="res://arte/INMORTAL_OGVVERSION.ogv" id="1_sv65i"]
+[ext_resource type="Script" uid="uid://cqfa1fdkwmise" path="res://UI-Escenas/cinematica.gd" id="1_dtv07"]
+[ext_resource type="VideoStream" path="res://arte/INMORTAL_OGVVERSION.ogv" id="1_sv65i"]
+[ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="2_isclb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isclb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [node name="Cinematica" type="Control"]
 layout_mode = 3
@@ -9,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dtv07")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
@@ -20,3 +27,33 @@ grow_vertical = 2
 stream = ExtResource("1_sv65i")
 autoplay = true
 expand = true
+
+[node name="Button" type="Button" parent="VideoStreamPlayer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -186.0
+offset_top = 17.0
+offset_right = -16.0
+offset_bottom = 68.0
+grow_horizontal = 0
+theme = ExtResource("2_isclb")
+theme_override_colors/font_hover_color = Color(0.258824, 0.8, 0.858824, 1)
+theme_override_colors/font_pressed_color = Color(0.258824, 0.8, 0.858824, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_isclb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_isclb")
+text = "Saltar >"
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="VideoStreamPlayer/Button" to="." method="_on_button_pressed"]
