@@ -369,10 +369,11 @@ tile_set = SubResource("TileSet_iqlhl")
 
 [node name="Ascensor" parent="." instance=ExtResource("8_lqu48")]
 position = Vector2(25981, -1665)
+next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
-position = Vector2(15055, 337)
+position = Vector2(25550, -1693)
 
 [node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
 visible = false
