@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://gf7ndobwjxwq" path="res://UI/Botones/btns-maim menu.png" id="3_syfuq"]
 [ext_resource type="Script" uid="uid://babuwufbrn0uw" path="res://Scripts/anim-btn.gd" id="4_s2c3o"]
 [ext_resource type="Texture2D" uid="uid://bum886184msom" path="res://UI/Main Menu/LOGO ESTUDIO.png" id="5_ma218"]
-[ext_resource type="Shader" uid="uid://ruxy3tgkc5vv" path="res://Scripts/Menu.gdshader" id="6_lpp7j"]
+[ext_resource type="Shader" path="res://Scripts/Menu.gdshader" id="6_lpp7j"]
 [ext_resource type="PackedScene" uid="uid://cgmhiol40t3we" path="res://UI-Escenas/Ajustes.tscn" id="7_7k0b2"]
 [ext_resource type="Texture2D" uid="uid://db0if7cgv5d5v" path="res://UI/Main Menu/nombre_inmortal.png" id="7_q25vh"]
 [ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="8_04wdr"]
@@ -92,9 +92,9 @@ region = Rect2(1650, 132, 550, 132)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h5i6o"]
 shader = ExtResource("6_lpp7j")
-shader_parameter/intensity = 0.02
-shader_parameter/speed = 8.0
-shader_parameter/block_size = 0.15
+shader_parameter/intensity = 0.03
+shader_parameter/speed = 30.0
+shader_parameter/block_size = 0.215
 
 [node name="Menu" type="Control"]
 layout_mode = 3
