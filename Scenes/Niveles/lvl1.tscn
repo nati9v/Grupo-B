@@ -372,7 +372,7 @@ position = Vector2(25981, -1665)
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
-position = Vector2(15055, 337)
+position = Vector2(367, 362)
 
 [node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
 visible = false
