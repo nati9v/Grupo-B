@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c71881nh10dvu"]
+
+[ext_resource type="Texture2D" uid="uid://3iuo0x7k8hql" path="res://arte/SpriteSHOCK.png" id="1_hditu"]
+
+[node name="Conjelado" type="RigidBody2D" groups=["Rigidbody"]]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.5
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, -79)
+scale = Vector2(0.195801, 0.261719)
+texture = ExtResource("1_hditu")
