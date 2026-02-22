@@ -1,12 +1,17 @@
 extends CharacterBody2D
 
 @export var speed: float = 400.0
+
 @export var jump_velocity: float = -700.0
+
 @export var gravedad: float = 900.0
 
 @export var coyote_time: float = 0.12
+
 var coyote_timer: float = 0.0
 var interact_target: Area2D = null
+var is_locked := false
+var can_move := true
 
 @export var fall_multiplier: float = 1.5
 @export var low_jump_multiplier: float = 2.0
@@ -39,12 +44,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravedad * delta
 
 	# --- SALTO ---
-	if Input.is_action_just_pressed("ui_accept") and coyote_timer > 0:
+	if can_move and Input.is_action_just_pressed("ui_accept") and coyote_timer > 0:
 		velocity.y = jump_velocity
 		coyote_timer = 0
 
 	# --- MOVIMIENTO HORIZONTAL ---
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := 0
+	if can_move:
+		direction = Input.get_axis("ui_left", "ui_right")
 	if direction != 0:
 		velocity.x = direction * speed
 	else:
@@ -68,7 +75,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			play_anim("fall")   # SIEMPRE al bajar
 
-	if Input.is_action_just_pressed("interact"):
+	if can_move and Input.is_action_just_pressed("interact"):
 		for area in $Interactuador.get_overlapping_areas():
 			if area.is_in_group("interactable"):
 				area.press()
@@ -94,3 +101,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		print("desconectado")
 		body.collision_layer = 2
 		body.collision_mask = 2
+
+
+func lock():
+	is_locked = true
+	velocity = Vector2.ZERO
+	set_physics_process(false)
