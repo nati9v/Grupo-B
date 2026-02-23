@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjennw6dsurlr"
+path="res://.godot/imported/boton.mp3-7577ff30e7351ccff0b1a03f206a1c4f.mp3str"
+
+[deps]
+
+source_file="res://Musica y SFX/SFX/boton.mp3"
+dest_files=["res://.godot/imported/boton.mp3-7577ff30e7351ccff0b1a03f206a1c4f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

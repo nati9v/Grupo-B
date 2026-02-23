@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://wbfjntdyelrr"]
+[gd_scene load_steps=7 format=3 uid="uid://wbfjntdyelrr"]
 
 [ext_resource type="Script" uid="uid://d2a6gm8ltrx1u" path="res://Scenes/Mecanismos/open_door.gd" id="1_nt2jr"]
 [ext_resource type="Texture2D" uid="uid://udcou3xah073" path="res://arte/Agregados/A puerta cerrada.png" id="2_87t2s"]
 [ext_resource type="Texture2D" uid="uid://dhk0y0qhtymyk" path="res://arte/Agregados/A puerta abierta.png" id="3_v48fk"]
+[ext_resource type="AudioStream" uid="uid://bmnwbtadgi5s" path="res://Musica y SFX/SFX/puerta-abierta.mp3" id="4_185u2"]
+[ext_resource type="AudioStream" uid="uid://ctygl7foxxogf" path="res://Musica y SFX/SFX/puerta-cerrada.mp3" id="5_a4d5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_185u2"]
 size = Vector2(35, 258)
@@ -22,3 +24,11 @@ texture = ExtResource("3_v48fk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(6.5, 0)
 shape = SubResource("RectangleShape2D_185u2")
+
+[node name="OpenSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_185u2")
+bus = &"SFX"
+
+[node name="CloseSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_a4d5a")
+bus = &"SFX"

@@ -13,3 +13,11 @@ func activate():
 	
 	$SpriteClosed.visible = !is_open
 	$SpriteOpen.visible = is_open
+	
+	if is_open:
+		$OpenSFX.play()
+	else:
+		$CloseSFX.play()
+	
+	
+	

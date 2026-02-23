@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://kawp3f3yobva"]
+[gd_scene load_steps=15 format=3 uid="uid://kawp3f3yobva"]
 
 [ext_resource type="Script" uid="uid://bljwdt4b80oel" path="res://Code/zona_de_muerte.gd" id="1_ajob0"]
 [ext_resource type="Texture2D" uid="uid://bccxriesdhhbb" path="res://Assets/Trampas/sprite-trampa-electrica.png" id="2_ncch3"]
+[ext_resource type="AudioStream" uid="uid://cduf1ng36ams3" path="res://Musica y SFX/SFX Trampas/Electricity 3.wav" id="3_2ko2w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncch3"]
 atlas = ExtResource("2_ncch3")
@@ -87,10 +88,16 @@ position = Vector2(1.5, 1)
 scale = Vector2(0.4925, 0.306667)
 sprite_frames = SubResource("SpriteFrames_we825")
 autoplay = "default"
+frame_progress = 0.140489
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.5, -0.5)
 scale = Vector2(0.465, 1)
 shape = SubResource("RectangleShape2D_niu5o")
+
+[node name="ImpactoSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2ko2w")
+autoplay = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
