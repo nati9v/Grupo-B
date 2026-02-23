@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dj3fm4sw0tai"
+path="res://.godot/imported/gotas.mp3-d69905e802b5c59a4bccde15345492c9.mp3str"
+
+[deps]
+
+source_file="res://Musica y SFX/SFX/gotas.mp3"
+dest_files=["res://.godot/imported/gotas.mp3-d69905e802b5c59a4bccde15345492c9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

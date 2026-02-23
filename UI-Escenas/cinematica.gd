@@ -1,6 +1,7 @@
 extends Control
 
-
+func _ready():
+	AudioManager.play_music("")
 
 	
 func _on_button_pressed():

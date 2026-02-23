@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgmhiol40t3we"]
+[gd_scene load_steps=16 format=3 uid="uid://cgmhiol40t3we"]
 
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="1_rkwl0"]
 [ext_resource type="Texture2D" uid="uid://d4kh3omecmlhy" path="res://UI/fondo-ui.png" id="2_jqna3"]
@@ -37,6 +37,10 @@ expand_margin_left = 8.0
 expand_margin_right = 6.0
 shadow_color = Color(0.501961, 0.792157, 0.819608, 0.552941)
 shadow_size = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8jam"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xj6bk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0bijb"]
 atlas = ExtResource("3_0bijb")
@@ -137,12 +141,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
+toggle_mode = true
 texture_normal = SubResource("AtlasTexture_k6ssn")
 texture_pressed = SubResource("AtlasTexture_3txm5")
 stretch_mode = 0
 
 [node name="sfx" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+toggle_mode = true
 texture_normal = SubResource("AtlasTexture_thpcg")
 texture_pressed = SubResource("AtlasTexture_fo6d8")
 
@@ -187,6 +193,7 @@ theme_override_colors/font_hover_color = Color(0.317647, 0.752941, 0.85098, 1)
 theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 55
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f8jam")
 text = "CONTROLES"
 flat = true
 
@@ -198,6 +205,7 @@ theme_override_colors/font_hover_color = Color(0.317647, 0.752941, 0.85098, 1)
 theme_override_colors/font_color = Color(0.180392, 0.572549, 0.639216, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xj6bk")
 text = "CENTRO DE AYUDA"
 flat = true
 
@@ -219,5 +227,7 @@ texture_normal = SubResource("AtlasTexture_0bijb")
 texture_pressed = SubResource("AtlasTexture_d8pxv")
 texture_hover = SubResource("AtlasTexture_4quc6")
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/musica" to="." method="_on_musica_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/sfx" to="." method="_on_sfx_pressed"]
 [connection signal="pressed" from="VBoxContainer/controles" to="." method="_on_controles_pressed"]
 [connection signal="pressed" from="cerrar" to="." method="_on_cerrar_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://xvuchbb5o85v"]
+[gd_scene load_steps=24 format=4 uid="uid://xvuchbb5o85v"]
 
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="1_p65l6"]
+[ext_resource type="Script" uid="uid://dqomt0ond4sni" path="res://Scenes/Niveles/lvl_2.gd" id="1_rdgwk"]
 [ext_resource type="Texture2D" uid="uid://b1s7lt5sl4rpm" path="res://arte/256/256-agua-p-vieja.png" id="2_fqrjd"]
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="4_nm8qd"]
 [ext_resource type="Texture2D" uid="uid://dhk0y0qhtymyk" path="res://arte/Agregados/A puerta abierta.png" id="5_aq45b"]
@@ -312,6 +313,7 @@ sources/4 = SubResource("TileSetAtlasSource_3pm5q")
 sources/5 = SubResource("TileSetAtlasSource_uj1pa")
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_rdgwk")
 
 [node name="TileMapLayer" type="Node2D" parent="."]
 

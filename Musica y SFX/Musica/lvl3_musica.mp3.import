@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7oaigl1fcqm0"
+path="res://.godot/imported/lvl3_musica.mp3-2c58d718e46abc9ec41b1de38da2b4c3.mp3str"
+
+[deps]
+
+source_file="res://Musica y SFX/Musica/lvl3_musica.mp3"
+dest_files=["res://.godot/imported/lvl3_musica.mp3-2c58d718e46abc9ec41b1de38da2b4c3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
