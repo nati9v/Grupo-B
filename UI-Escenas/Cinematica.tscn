@@ -27,6 +27,7 @@ grow_vertical = 2
 stream = ExtResource("1_sv65i")
 autoplay = true
 expand = true
+bus = &"Musica"
 
 [node name="Button" type="Button" parent="VideoStreamPlayer"]
 layout_mode = 1

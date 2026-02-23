@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 checkpoint_manager="*res://Code/checkpoint_manager.gd"
 CorpseManager="*res://Scenes/Trampas y cadaveres/CorpseManager.tscn"
+AudioManager="*res://Scripts/AudioManager.gd"
 
 [display]
 

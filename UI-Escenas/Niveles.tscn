@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://buhmn7uyogah0"]
 
 [ext_resource type="Texture2D" uid="uid://bmm2vxq1i07cb" path="res://UI/Main Menu/marco.png" id="1_5gke6"]
-[ext_resource type="Script" uid="uid://cnor8iar7i2pv" path="res://UI-niveles.gd" id="1_awca0"]
+[ext_resource type="Script" uid="uid://cnor8iar7i2pv" path="res://Scripts/UI-niveles.gd" id="1_awca0"]
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="2_0gs42"]
 [ext_resource type="Texture2D" uid="uid://c1iercgyces3w" path="res://UI/Botones/fondo-btn-lvls.png" id="3_f6lde"]
 [ext_resource type="Texture2D" uid="uid://dtsk5rorx57vu" path="res://UI/Botones/Disabled-fondo-btn-lvls.png" id="4_8r7gm"]

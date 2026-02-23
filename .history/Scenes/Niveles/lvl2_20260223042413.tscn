@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=26 format=4 uid="uid://xvuchbb5o85v"]
+=======
+[gd_scene load_steps=24 format=4 uid="uid://xvuchbb5o85v"]
+>>>>>>> main
 
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_fpb14"]
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="1_p65l6"]
@@ -393,7 +397,11 @@ sources/4 = SubResource("TileSetAtlasSource_3pm5q")
 sources/5 = SubResource("TileSetAtlasSource_uj1pa")
 
 [node name="Level2" type="Node2D"]
+<<<<<<< HEAD
 script = ExtResource("1_fpb14")
+=======
+script = ExtResource("1_rdgwk")
+>>>>>>> main
 
 [node name="TileMapLayer" type="Node2D" parent="."]
 
