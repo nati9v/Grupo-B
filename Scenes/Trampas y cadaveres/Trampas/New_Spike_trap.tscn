@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bno6dmvty05f2" path="res://arte/Agregados/pinchos-zona2y3.png" id="2_sl4cm"]
 [ext_resource type="Texture2D" uid="uid://ba18m1cb0kwjo" path="res://arte/SpriteSpike.png" id="3_aie4k"]
 [ext_resource type="PackedScene" uid="uid://c5cmkrokx15q6" path="res://Scenes/zona_de_muerte.tscn" id="4_mg1rn"]
-[ext_resource type="AudioStream" uid="uid://cduf1ng36ams3" path="res://Musica y SFX/SFX Trampas/Electricity 3.wav" id="5_odfq2"]
+[ext_resource type="AudioStream" uid="uid://63o55ruya2br" path="res://Musica y SFX/SFX Trampas/Pinchos SFX.wav" id="5_odfq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogvtp"]
 size = Vector2(256, 20)

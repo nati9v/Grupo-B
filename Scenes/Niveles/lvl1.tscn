@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=51 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d1n2rygfwu0bu" path="res://Assets/Tilesets/Cajas-256.png" id="7_on1fg"]
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="7_upjmo"]
 [ext_resource type="PackedScene" uid="uid://8rtcgs3pf50y" path="res://Scenes/Mecanismos/Ascensor.tscn" id="8_lqu48"]
+[ext_resource type="Shader" uid="uid://6gmi3qxgk4ne" path="res://arte/Shaders/Agua.gdshader" id="9_buwil"]
 [ext_resource type="PackedScene" uid="uid://dscrrr8tyxoxk" path="res://Scenes/Mecanismos/Checkpoint.tscn" id="10_oidrm"]
 [ext_resource type="PackedScene" uid="uid://yaj5phaghh6l" path="res://Scenes/Mecanismos/Botón.tscn" id="11_irqd3"]
 [ext_resource type="PackedScene" uid="uid://xt8wrb56jrpj" path="res://Scenes/Trampas y cadaveres/Trampas/Old_Water_trap.tscn" id="13_ba4u5"]
@@ -366,6 +367,16 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_6chae")
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fa4wx"]
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cbkt"]
+shader = ExtResource("9_buwil")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_fa4wx")
+shader_parameter/speed = Vector2(0.1, 0.18)
+shader_parameter/wave_strength = 0.105
+shader_parameter/alpha = 0.7
+
 [sub_resource type="Animation" id="Animation_lqu48"]
 length = 0.001
 tracks/0/type = "value"
@@ -433,7 +444,12 @@ tile_map_data = PackedByteArray("AACeAP3/AAAAAAEAAACfAPz/AAACAAEAAAAZAAMAAAAAAAE
 tile_set = SubResource("TileSet_lgb3t")
 
 [node name="trampas" type="TileMapLayer" parent="TileMapLayer"]
-tile_map_data = PackedByteArray("AAARAAIAAQAAAAEAAAASAAIAAQAAAAEAAAASAAMAAQAAAAEAAAARAAMAAQAAAAEAAAAkAAIAAQAAAAEAAAAjAAIAAQAAAAEAAAAjAAMAAQAAAAEAAAAkAAMAAQAAAAEAAAA=")
+visible = false
+tile_set = SubResource("TileSet_iqlhl")
+
+[node name="Agua" type="TileMapLayer" parent="TileMapLayer"]
+material = SubResource("ShaderMaterial_1cbkt")
+tile_map_data = PackedByteArray("AAASAAMAAQAAAAEAAAARAAMAAQAAAAEAAAARAAIAAQAAAAEAAAASAAIAAQAAAAEAAAAjAAIAAQAAAAEAAAAkAAIAAQAAAAEAAAAkAAMAAQAAAAEAAAAjAAMAAQAAAAEAAAA=")
 tile_set = SubResource("TileSet_iqlhl")
 
 [node name="trampas_hielo" type="TileMapLayer" parent="TileMapLayer"]
