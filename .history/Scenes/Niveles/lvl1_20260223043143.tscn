@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=48 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
@@ -631,19 +631,11 @@ activation_mode = 1
 cooldown_time = 4.0
 
 [node name="Botón" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("11_irqd3")]
-position = Vector2(15488, -672)
-targets = [NodePath("../plataforma_Vertical")]
-
-[node name="plataforma_Vertical" parent="." instance=ExtResource("24_lqu48")]
-position = Vector2(15488, 504)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma_Vertical"]
-libraries = {
-&"": SubResource("AnimationLibrary_upjmo")
-}
+position = Vector2(16672, -664)
+targets = [NodePath("../FrostTrap")]
 
 [node name="AmbientSfx" parent="." instance=ExtResource("26_buwil")]
-position = Vector2(8729, -56)
+position = Vector2(25229, -1369)
 audio_bus_name = &"SFX"
 sound = ExtResource("27_fa4wx")
 

@@ -1,54 +1,64 @@
-[gd_scene load_steps=15 format=3 uid="uid://dj7ykniqmuo5u"]
+[gd_scene load_steps=16 format=3 uid="uid://dj7ykniqmuo5u"]
 
 [ext_resource type="Script" uid="uid://bljwdt4b80oel" path="res://Code/zona_de_muerte.gd" id="1_d7u3p"]
 [ext_resource type="Texture2D" uid="uid://djbwqd6cskouq" path="res://Assets/Trampas/sprites-trampa-frio.png" id="2_6jes3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrvph"]
-size = Vector2(133, 248)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7u3p"]
+atlas = ExtResource("2_6jes3")
+region = Rect2(0, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnalm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jes3"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(400, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ulgbh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrvph"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(800, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n63xm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnalm"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(1200, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1x22k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulgbh"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(1600, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7egog"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n63xm"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(2000, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fxymo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x22k"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(2400, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qe7tl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7egog"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(2800, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ka5oq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxymo"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(3200, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_61x6e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe7tl"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(3600, 0, 400, 600)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssavd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka5oq"]
 atlas = ExtResource("2_6jes3")
 region = Rect2(4000, 0, 400, 600)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lxb5l"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7u3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jes3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrvph")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pnalm")
 }, {
@@ -72,34 +82,30 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ka5oq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_61x6e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ssavd")
 }],
 "loop": true,
 "name": &"default",
 "speed": 10.0
 }]
 
-[node name="FrostTrap" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrvph"]
+size = Vector2(133, 248)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="FrostTrap" type="Area2D"]
 script = ExtResource("1_d7u3p")
 death_type = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visibility_layer = 2
-position = Vector2(3.5, 15)
-shape = SubResource("RectangleShape2D_jrvph")
+active_time = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5, 13)
 scale = Vector2(0.467, 0.467)
 sprite_frames = SubResource("SpriteFrames_lxb5l")
 autoplay = "default"
-frame_progress = 0.844271
+frame_progress = 0.758353
 
-[connection signal="area_shape_entered" from="Area2D" to="Area2D" method="_on_area_shape_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 15)
+shape = SubResource("RectangleShape2D_jrvph")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=48 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
@@ -24,7 +24,12 @@
 [ext_resource type="Texture2D" uid="uid://b7bwuq8d3ufgy" path="res://arte/luzluz.png" id="21_irqd3"]
 [ext_resource type="Script" uid="uid://c0nb04m1t4wgt" path="res://Code/luces.gd" id="22_qjt1l"]
 [ext_resource type="PackedScene" uid="uid://btygccneo307t" path="res://Scenes/Mecanismos/plataforma_Vertical.tscn" id="24_lqu48"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dj7ykniqmuo5u" path="res://Scenes/Trampas y cadaveres/Trampas/Frost_trap.tscn" id="26_upjmo"]
+=======
+[ext_resource type="PackedScene" uid="uid://bnrval2x8ohma" path="res://Scenes/Mecanismos/Ambient_SFX.tscn" id="26_buwil"]
+[ext_resource type="AudioStream" uid="uid://dj3fm4sw0tai" path="res://Musica y SFX/SFX/gotas.mp3" id="27_fa4wx"]
+>>>>>>> main
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqlhl"]
 
@@ -495,6 +500,67 @@ position = Vector2(15995, -641)
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("10_oidrm")]
 position = Vector2(22914, -1665)
 
+<<<<<<< HEAD
+=======
+[node name="Luces" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Luces"]
+position = Vector2(15492, -265)
+scale = Vector2(0.755443, 4.07265)
+color = Color(0.954854, 0.724014, 0.627975, 1)
+energy = 4.8
+texture = ExtResource("21_irqd3")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Luces"]
+position = Vector2(20867, -1578.06)
+scale = Vector2(0.755443, 1.89204)
+color = Color(0.954854, 0.724014, 0.627975, 1)
+energy = 4.8
+texture = ExtResource("21_irqd3")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Luces"]
+position = Vector2(4492, -636.063)
+scale = Vector2(1.65935, 2.58141)
+color = Color(0.954854, 0.724014, 0.627975, 1)
+energy = 4.8
+texture = ExtResource("21_irqd3")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Luces"]
+position = Vector2(18042, -1538.14)
+scale = Vector2(0.74124, 2.04465)
+color = Color(0.954854, 0.724014, 0.627975, 1)
+energy = 4.8
+texture = ExtResource("21_irqd3")
+script = ExtResource("22_qjt1l")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Luces"]
+position = Vector2(12148, -1064.57)
+scale = Vector2(0.74124, 1.91411)
+color = Color(0.954854, 0.724014, 0.627975, 1)
+energy = 4.8
+texture = ExtResource("21_irqd3")
+script = ExtResource("22_qjt1l")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Luces"]
+position = Vector2(25997, -1914)
+scale = Vector2(0.74124, 1.55339)
+color = Color(0.954854, 0.724014, 0.627975, 1)
+energy = 4.8
+texture = ExtResource("21_irqd3")
+script = ExtResource("22_qjt1l")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Luces"]
+position = Vector2(640, 257)
+scale = Vector2(0.683545, 1.03235)
+color = Color(0.954854, 0.724014, 0.627975, 1)
+energy = 4.8
+texture = ExtResource("21_irqd3")
+script = ExtResource("22_qjt1l")
+
+[node name="Conjelado" parent="." instance=ExtResource("12_on1fg")]
+position = Vector2(16912, -712)
+
+>>>>>>> main
 [node name="UI_Level" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="UI_Level"]
@@ -571,6 +637,7 @@ visible = false
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.57309, 0.760566, 0.891368, 1)
 
+<<<<<<< HEAD
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(15492, -265)
 scale = Vector2(0.755443, 4.07265)
@@ -630,20 +697,14 @@ scale = Vector2(2.98, 2.98)
 activation_mode = 1
 cooldown_time = 4.0
 
+=======
+>>>>>>> main
 [node name="Botón" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("11_irqd3")]
-position = Vector2(15488, -672)
-targets = [NodePath("../plataforma_Vertical")]
-
-[node name="plataforma_Vertical" parent="." instance=ExtResource("24_lqu48")]
-position = Vector2(15488, 504)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma_Vertical"]
-libraries = {
-&"": SubResource("AnimationLibrary_upjmo")
-}
+position = Vector2(16672, -664)
+targets = [NodePath("../FrostTrap")]
 
 [node name="AmbientSfx" parent="." instance=ExtResource("26_buwil")]
-position = Vector2(8729, -56)
+position = Vector2(25229, -1369)
 audio_bus_name = &"SFX"
 sound = ExtResource("27_fa4wx")
 
