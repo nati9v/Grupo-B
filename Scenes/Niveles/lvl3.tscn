@@ -1,10 +1,17 @@
-[gd_scene load_steps=25 format=4 uid="uid://diutpt7v0e4xr"]
+[gd_scene load_steps=34 format=4 uid="uid://diutpt7v0e4xr"]
 
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="1_nhc8w"]
 [ext_resource type="Script" uid="uid://bp8bj7awyh6hc" path="res://Scenes/Niveles/lvl_3.gd" id="1_u24uy"]
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="2_bqw4l"]
 [ext_resource type="PackedScene" uid="uid://kawp3f3yobva" path="res://Scenes/Trampas y cadaveres/Trampas/ElectricTrap.tscn" id="8_jwn51"]
 [ext_resource type="PackedScene" uid="uid://cwmkcdv36qnnc" path="res://Scenes/pruebeteoprimus.tscn" id="9_wecwy"]
+[ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="11_0wrsb"]
+[ext_resource type="Texture2D" uid="uid://dcq2couutr3f7" path="res://UI/marco-lvl.png" id="12_wawgp"]
+[ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="13_k3qf1"]
+[ext_resource type="Texture2D" uid="uid://je14yheomnvg" path="res://UI/icono.png" id="14_86wv7"]
+[ext_resource type="PackedScene" uid="uid://rsr3y7ehspr4" path="res://UI-Escenas/Pausa.tscn" id="15_3ufqd"]
+[ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="16_k3qf1"]
+[ext_resource type="PackedScene" uid="uid://cgmhiol40t3we" path="res://UI-Escenas/Ajustes.tscn" id="17_86wv7"]
 [ext_resource type="Texture2D" uid="uid://b1s7lt5sl4rpm" path="res://arte/256/256-agua-p-vieja.png" id="21_i2wx6"]
 [ext_resource type="Texture2D" uid="uid://cqup3bxojuns1" path="res://arte/256/tileset-256-parte-nueva.png" id="22_vjehr"]
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="23_hx70g"]
@@ -445,6 +452,14 @@ sources/4 = SubResource("TileSetAtlasSource_jru83")
 sources/5 = SubResource("TileSetAtlasSource_bf2fn")
 sources/6 = SubResource("TileSetAtlasSource_t4jpr")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao8pk"]
+atlas = ExtResource("13_k3qf1")
+region = Rect2(426, 0, 142, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cb47"]
+atlas = ExtResource("13_k3qf1")
+region = Rect2(426, 142, 142, 142)
+
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_u24uy")
 
@@ -474,3 +489,78 @@ scale = Vector2(2.915, 2.915)
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("9_wecwy")]
 position = Vector2(5209, 1158)
+
+[node name="UI_Level" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI_Level"]
+anchors_preset = -1
+anchor_left = 0.147
+anchor_top = 0.16
+anchor_right = 0.147
+anchor_bottom = 0.16
+offset_left = -25.16
+offset_top = -40.2
+offset_right = 24.84
+offset_bottom = 35.8
+theme = ExtResource("11_0wrsb")
+theme_override_font_sizes/font_size = 60
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI_Level"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -12.0
+offset_right = 21.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_wawgp")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="UI_Level"]
+anchors_preset = -1
+anchor_left = 0.91
+anchor_top = 0.14
+anchor_right = 0.91
+anchor_bottom = 0.14
+offset_left = -35.8
+offset_top = -36.8
+offset_right = 37.2
+offset_bottom = 36.2
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("AtlasTexture_ao8pk")
+texture_pressed = SubResource("AtlasTexture_6cb47")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="UI_Level"]
+anchors_preset = -1
+anchor_left = 0.092
+anchor_top = 0.158
+anchor_right = 0.092
+anchor_bottom = 0.158
+offset_left = -31.76
+offset_top = -31.76
+offset_right = 8.23999
+offset_bottom = 8.24001
+scale = Vector2(1.57506, 1.57506)
+texture = ExtResource("14_86wv7")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pausa" parent="." instance=ExtResource("15_3ufqd")]
+visible = false
+
+[node name="Controles" parent="." instance=ExtResource("16_k3qf1")]
+visible = false
+
+[node name="Ajustes" parent="." instance=ExtResource("17_86wv7")]
+visible = false
+
+[connection signal="pressed" from="UI_Level/TextureButton" to="." method="_on_texture_button_pressed"]

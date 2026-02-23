@@ -626,7 +626,7 @@ libraries = {
 }
 
 [node name="AmbientSfx" parent="." instance=ExtResource("26_buwil")]
-position = Vector2(25229, -1369)
+position = Vector2(8729, -56)
 audio_bus_name = &"SFX"
 sound = ExtResource("27_fa4wx")
 
