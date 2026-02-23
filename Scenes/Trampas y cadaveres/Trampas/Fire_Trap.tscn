@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://gqh3ymyf15kj"]
+[gd_scene load_steps=20 format=3 uid="uid://hfw7ugre1af8"]
 
 [ext_resource type="Script" uid="uid://bljwdt4b80oel" path="res://Code/zona_de_muerte.gd" id="1_77dy0"]
 [ext_resource type="Texture2D" uid="uid://co3bgrv8d5026" path="res://Assets/Trampas/sprites-trampa-fuego.png" id="2_p52gh"]
