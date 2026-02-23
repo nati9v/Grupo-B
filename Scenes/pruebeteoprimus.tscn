@@ -146,7 +146,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm78e"]
-size = Vector2(24.963, 2.66642)
+size = Vector2(14.4, 2.66642)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr7d6"]
 size = Vector2(19.3, 19.7337)
@@ -156,6 +156,7 @@ z_index = 4
 scale = Vector2(7.5, 7.5)
 collision_layer = 3
 script = ExtResource("1_4wb1q")
+speed = 500.0
 jump_velocity = -650.0
 gravedad = 700.0
 coyote_time = 0.3

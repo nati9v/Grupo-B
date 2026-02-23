@@ -4,18 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="1_13akm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3orr0"]
-size = Vector2(128, 136)
+size = Vector2(32, 32)
 
 [node name="Ascensor" type="Area2D"]
 script = ExtResource("1_3orr0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.86102e-06, -12)
+scale = Vector2(1.18288, 1.09375)
 texture = ExtResource("1_13akm")
 region_enabled = true
 region_rect = Rect2(1792, 1024, 257, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_3orr0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
