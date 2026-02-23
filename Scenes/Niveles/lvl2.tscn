@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://xvuchbb5o85v"]
+[gd_scene load_steps=35 format=4 uid="uid://xvuchbb5o85v"]
 
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_fpb14"]
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="1_p65l6"]
-[ext_resource type="Script" uid="uid://dqomt0ond4sni" path="res://Scenes/Niveles/lvl_2.gd" id="1_rdgwk"]
 [ext_resource type="Texture2D" uid="uid://b1s7lt5sl4rpm" path="res://arte/256/256-agua-p-vieja.png" id="2_fqrjd"]
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="4_nm8qd"]
 [ext_resource type="Texture2D" uid="uid://dhk0y0qhtymyk" path="res://arte/Agregados/A puerta abierta.png" id="5_aq45b"]
@@ -12,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b82aevq2bs8dj" path="res://Scenes/Trampas y cadaveres/Trampas/New_Spike_trap.tscn" id="8_am47m"]
 [ext_resource type="PackedScene" uid="uid://btygccneo307t" path="res://Scenes/Mecanismos/plataforma_Vertical.tscn" id="9_ttxd7"]
 [ext_resource type="PackedScene" uid="uid://yaj5phaghh6l" path="res://Scenes/Mecanismos/Botón.tscn" id="10_rdgwk"]
+[ext_resource type="PackedScene" uid="uid://8rtcgs3pf50y" path="res://Scenes/Mecanismos/Ascensor.tscn" id="11_rdgwk"]
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="12_axgr0"]
 [ext_resource type="Texture2D" uid="uid://dcq2couutr3f7" path="res://UI/marco-lvl.png" id="13_twbj7"]
 [ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="14_2cuct"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://rsr3y7ehspr4" path="res://UI-Escenas/Pausa.tscn" id="16_fuqyy"]
 [ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="17_shbv8"]
 [ext_resource type="PackedScene" uid="uid://cgmhiol40t3we" path="res://UI-Escenas/Ajustes.tscn" id="18_71uec"]
-[ext_resource type="PackedScene" uid="uid://8rtcgs3pf50y" path="res://Scenes/Mecanismos/Ascensor.tscn" id="11_rdgwk"]
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="19_wm374"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqlhl"]
@@ -478,9 +477,13 @@ targets = [NodePath("../Vieja_plataforma_Vertical2")]
 [node name="Vieja_plataforma_Vertical3" parent="Mecanismos" instance=ExtResource("9_ttxd7")]
 position = Vector2(3200, 2552)
 
+[node name="Botón" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
+position = Vector2(3200, 2400)
+targets = [NodePath("../Vieja_plataforma_Vertical3"), NodePath("../Vieja_plataforma_Vertical3")]
+
 [node name="Botón" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
 position = Vector2(3197, 2419)
-targets = [NodePath("../Vieja_plataforma_Vertical3")]
+targets = [null]
 
 [node name="UI_Level" type="CanvasLayer" parent="."]
 
@@ -555,11 +558,6 @@ visible = false
 [node name="Ajustes" parent="." instance=ExtResource("18_71uec")]
 visible = false
 
-[connection signal="pressed" from="UI_Level/TextureButton" to="." method="_on_texture_button_pressed"]
-[node name="Botón" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
-position = Vector2(3200, 2400)
-targets = [NodePath("../Vieja_plataforma_Vertical3"), NodePath("../Vieja_plataforma_Vertical3")]
-
 [node name="Trampas" type="Node2D" parent="."]
 
 [node name="Spike_trap" parent="Trampas" instance=ExtResource("8_am47m")]
@@ -567,3 +565,5 @@ position = Vector2(17024, 4224)
 
 [node name="Spike_trap2" parent="Trampas" instance=ExtResource("8_am47m")]
 position = Vector2(17280, 4232)
+
+[connection signal="pressed" from="UI_Level/TextureButton" to="." method="_on_texture_button_pressed"]

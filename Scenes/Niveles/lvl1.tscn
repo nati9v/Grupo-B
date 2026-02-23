@@ -642,9 +642,4 @@ libraries = {
 &"": SubResource("AnimationLibrary_upjmo")
 }
 
-[node name="AmbientSfx" parent="." instance=ExtResource("26_buwil")]
-position = Vector2(8729, -56)
-audio_bus_name = &"SFX"
-sound = ExtResource("27_fa4wx")
-
 [connection signal="pressed" from="UI_Level/TextureButton" to="Menu Pausa" method="_on_texture_button_pressed"]
