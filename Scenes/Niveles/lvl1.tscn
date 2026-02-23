@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=48 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
@@ -26,7 +26,6 @@
 [ext_resource type="Script" uid="uid://c0nb04m1t4wgt" path="res://Code/luces.gd" id="22_qjt1l"]
 [ext_resource type="PackedScene" uid="uid://btygccneo307t" path="res://Scenes/Mecanismos/plataforma_Vertical.tscn" id="24_lqu48"]
 [ext_resource type="PackedScene" uid="uid://dj7ykniqmuo5u" path="res://Scenes/Trampas y cadaveres/Trampas/Frost_trap.tscn" id="26_upjmo"]
-[ext_resource type="PackedScene" uid="uid://hfw7ugre1af8" path="res://Scenes/Trampas y cadaveres/Trampas/Fire_Trap.tscn" id="27_buwil"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqlhl"]
 
@@ -714,8 +713,5 @@ position = Vector2(15488, 504)
 libraries = {
 &"": SubResource("AnimationLibrary_upjmo")
 }
-
-[node name="Fire_trap" parent="." instance=ExtResource("27_buwil")]
-position = Vector2(1106, 493)
 
 [connection signal="pressed" from="UI_Level/TextureButton" to="Menu Pausa" method="_on_texture_button_pressed"]
