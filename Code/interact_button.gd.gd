@@ -5,3 +5,4 @@ extends Area2D
 func press():
 	for t in targets:
 		t.activate()
+		$AudioStreamPlayer2D.play()

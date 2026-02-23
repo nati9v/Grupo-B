@@ -4,6 +4,6 @@ func _ready():
 	AudioManager.play_music("res://Musica y SFX/Musica/lvl3_musica.mp3")
 
 
-func _on_texture_button_pressed() -> void:
+func _on_texture_button_pressed():
 	pausa.pausa()
 	

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmnwbtadgi5s"
+path="res://.godot/imported/puerta-abierta.mp3-fea0697c0d4159aca8833c1d23e9d139.mp3str"
+
+[deps]
+
+source_file="res://Musica y SFX/SFX/puerta-abierta.mp3"
+dest_files=["res://.godot/imported/puerta-abierta.mp3-fea0697c0d4159aca8833c1d23e9d139.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

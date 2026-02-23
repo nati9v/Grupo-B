@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://yaj5phaghh6l"]
+[gd_scene load_steps=5 format=3 uid="uid://yaj5phaghh6l"]
 
 [ext_resource type="Script" uid="uid://bjhbo2hs2ni38" path="res://Code/interact_button.gd.gd" id="1_vlakt"]
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="2_qskdi"]
+[ext_resource type="AudioStream" uid="uid://cjennw6dsurlr" path="res://Musica y SFX/SFX/boton.mp3" id="3_2fwpd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gu3fx"]
 size = Vector2(86, 87)
@@ -17,3 +18,7 @@ texture = ExtResource("2_qskdi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_gu3fx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2fwpd")
+bus = &"SFX"
