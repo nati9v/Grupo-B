@@ -47,4 +47,5 @@ texture_normal = SubResource("AtlasTexture_ndoql")
 texture_pressed = SubResource("AtlasTexture_2lcj2")
 texture_hover = SubResource("AtlasTexture_83sh2")
 
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -129,7 +129,11 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_0nwnc")
 text = "AJUSTES"
 flat = true
 
+[connection signal="mouse_entered" from="VBoxContainer/menú" to="." method="_on_menú_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/menú" to="." method="_on_menú_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/reanudar" to="." method="_on_reanudar_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/reanudar" to="." method="_on_reanudar_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/reiniciar" to="." method="_on_reiniciar_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ajustes" to="." method="_on_ajustes_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/ajustes" to="." method="_on_ajustes_pressed"]

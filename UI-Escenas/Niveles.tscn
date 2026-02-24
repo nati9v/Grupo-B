@@ -324,7 +324,11 @@ theme_override_colors/font_color = Color(0.317647, 0.752941, 0.85098, 1)
 theme_override_font_sizes/font_size = 50
 text = "NIVELES"
 
+[connection signal="mouse_entered" from="HBoxContainer/Lvl1" to="." method="_on_lvl_1_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/lvl2" to="." method="_on_lvl_2_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/lvl3" to="." method="_on_lvl_3_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

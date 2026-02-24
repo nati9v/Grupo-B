@@ -730,4 +730,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_upjmo")
 }
 
+[connection signal="mouse_entered" from="UI_Level/TextureButton" to="Menu Pausa" method="_on_texture_button_mouse_entered"]
 [connection signal="pressed" from="UI_Level/TextureButton" to="Menu Pausa" method="_on_texture_button_pressed"]

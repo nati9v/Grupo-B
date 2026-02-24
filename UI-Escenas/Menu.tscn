@@ -213,7 +213,11 @@ visible = false
 [node name="Controles" parent="." instance=ExtResource("8_04wdr")]
 visible = false
 
+[connection signal="mouse_entered" from="Botones/Jugar" to="." method="_on_jugar_mouse_entered"]
 [connection signal="pressed" from="Botones/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="mouse_entered" from="Botones/Ajustes" to="." method="_on_ajustes_mouse_entered"]
 [connection signal="pressed" from="Botones/Ajustes" to="Ajustes" method="_on_ajustes_pressed"]
+[connection signal="mouse_entered" from="Botones/Controles" to="." method="_on_controles_mouse_entered"]
 [connection signal="pressed" from="Botones/Controles" to="Controles" method="_on_controles_pressed"]
+[connection signal="mouse_entered" from="Botones/Salir" to="." method="_on_salir_mouse_entered"]
 [connection signal="pressed" from="Botones/Salir" to="." method="_on_salir_pressed"]
