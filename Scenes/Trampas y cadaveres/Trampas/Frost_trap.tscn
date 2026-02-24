@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dj7ykniqmuo5u"]
+[gd_scene load_steps=18 format=3 uid="uid://dj7ykniqmuo5u"]
 
 [ext_resource type="Script" uid="uid://bljwdt4b80oel" path="res://Code/zona_de_muerte.gd" id="1_d7u3p"]
 [ext_resource type="Texture2D" uid="uid://djbwqd6cskouq" path="res://Assets/Trampas/sprites-trampa-frio.png" id="2_6jes3"]
+[ext_resource type="AudioStream" uid="uid://c4mmvqmdp010n" path="res://Musica y SFX/SFX Trampas/hielo-impacto.mp3" id="3_6jes3"]
+[ext_resource type="AudioStream" uid="uid://baqwl4pgxa75l" path="res://Musica y SFX/SFX Trampas/hielo-trampa.wav" id="4_jrvph"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7u3p"]
 atlas = ExtResource("2_6jes3")
@@ -106,6 +108,15 @@ frame_progress = 0.922238
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 15)
 shape = SubResource("RectangleShape2D_jrvph")
+
+[node name="ImpactoSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6jes3")
+bus = &"SFX"
+
+[node name="LoopSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jrvph")
+autoplay = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

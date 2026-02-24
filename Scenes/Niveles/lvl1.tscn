@@ -462,7 +462,7 @@ next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
-position = Vector2(593.31, 392)
+position = Vector2(14498, 303)
 
 [node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
 modulate = Color(1, 0.766667, 0, 1)
@@ -723,6 +723,7 @@ position = Vector2(15488, -672)
 targets = [NodePath("../plataforma_Vertical")]
 
 [node name="plataforma_Vertical" parent="." instance=ExtResource("24_lqu48")]
+visible = false
 position = Vector2(15488, 504)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma_Vertical"]
