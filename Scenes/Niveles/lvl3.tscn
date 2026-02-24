@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://diutpt7v0e4xr"]
 
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="1_nhc8w"]
-[ext_resource type="Script" uid="uid://bp8bj7awyh6hc" path="res://Scenes/Niveles/lvl_3.gd" id="1_u24uy"]
+[ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_u24uy"]
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="2_bqw4l"]
 [ext_resource type="PackedScene" uid="uid://kawp3f3yobva" path="res://Scenes/Trampas y cadaveres/Trampas/ElectricTrap.tscn" id="8_jwn51"]
 [ext_resource type="PackedScene" uid="uid://cwmkcdv36qnnc" path="res://Scenes/pruebeteoprimus.tscn" id="9_wecwy"]
