@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw65u1g4o2a2"]
+[gd_scene load_steps=8 format=3 uid="uid://cw65u1g4o2a2"]
 
 [ext_resource type="Texture2D" uid="uid://ba18m1cb0kwjo" path="res://arte/SpriteSpike.png" id="1_gfcpp"]
 [ext_resource type="Script" uid="uid://bkmx142lswh73" path="res://Scenes/Trampas y cadaveres/Trampas/Activación_de_espinas.gd" id="1_ogvtp"]
 [ext_resource type="Texture2D" uid="uid://demwpwii1xr6r" path="res://arte/Agregados/pinchos-zona1.png" id="2_4ah2a"]
 [ext_resource type="PackedScene" uid="uid://c5cmkrokx15q6" path="res://Scenes/zona_de_muerte.tscn" id="3_4ah2a"]
+[ext_resource type="AudioStream" uid="uid://cduf1ng36ams3" path="res://Musica y SFX/SFX Trampas/Electricity 3.wav" id="5_tsdko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogvtp"]
 size = Vector2(256, 20)
@@ -37,3 +38,7 @@ spawn_corpse = false
 position = Vector2(0, 56)
 shape = SubResource("RectangleShape2D_r52ai")
 debug_color = Color(0.991381, 0, 0.266306, 0.42)
+
+[node name="ImpactoSFX" type="AudioStreamPlayer2D" parent="Zona de muerte"]
+stream = ExtResource("5_tsdko")
+bus = &"SFX"

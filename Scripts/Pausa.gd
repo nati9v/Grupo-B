@@ -41,4 +41,6 @@ func _on_ajustes_pressed():
 func _on_texture_button_pressed():
 	pausa()
 
+
+
 	

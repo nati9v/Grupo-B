@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8jrlkqk7asub"
+path="res://.godot/imported/Water Impact 1.wav-7767ba09d73ce6e9cf552438efd2c591.sample"
+
+[deps]
+
+source_file="res://Musica y SFX/SFX Trampas/Water Impact 1.wav"
+dest_files=["res://.godot/imported/Water Impact 1.wav-7767ba09d73ce6e9cf552438efd2c591.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

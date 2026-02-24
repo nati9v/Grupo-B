@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de5r5bnaeu57e"
+path="res://.godot/imported/paso.mp3-21bdbe177d787d07602e2d3a29b6b423.mp3str"
+
+[deps]
+
+source_file="res://Musica y SFX/SFX/paso.mp3"
+dest_files=["res://.godot/imported/paso.mp3-21bdbe177d787d07602e2d3a29b6b423.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

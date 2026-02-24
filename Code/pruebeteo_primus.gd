@@ -12,6 +12,7 @@ var coyote_timer: float = 0.0
 var interact_target: Area2D = null
 var is_locked := false
 var can_move := true
+var was_on_floor := false
 
 @export var fall_multiplier: float = 1.5
 @export var low_jump_multiplier: float = 2.0
@@ -42,12 +43,11 @@ func _physics_process(delta: float) -> void:
 
 	else:
 		velocity.y += gravedad * delta
-
 	# --- SALTO ---
 	if can_move and Input.is_action_just_pressed("ui_accept") and coyote_timer > 0:
 		velocity.y = jump_velocity
 		coyote_timer = 0
-
+		#Saltar.play()
 	# --- MOVIMIENTO HORIZONTAL ---
 	var direction := 0
 	if can_move:
@@ -84,6 +84,9 @@ func _physics_process(delta: float) -> void:
 
 
 	move_and_slide()
+	if is_on_floor() and not was_on_floor:
+		$Aterrizar.play()
+	was_on_floor = is_on_floor()
 
 func play_anim(name: String):
 	if $AnimatedSprite2D.animation != name:
@@ -107,3 +110,16 @@ func lock():
 	is_locked = true
 	velocity = Vector2.ZERO
 	set_physics_process(false)
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	var last_step_frame := -1
+	if $AnimatedSprite2D.animation == "run":
+		var f = $AnimatedSprite2D.frame
+		
+		if (f == 0 or f == 3) and f != last_step_frame:
+			last_step_frame = f
+			play_footstep()
+			
+func play_footstep():
+	$Correr.pitch_scale = randf_range(0.92, 1.08)
+	$Correr.play()
