@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://47bsateleo1u"]
 
 [ext_resource type="Script" uid="uid://base7r85wc8ju" path="res://Scripts/Controles.gd" id="1_0m8xt"]
-[ext_resource type="Texture2D" uid="uid://ci8e2iqn2mtcq" path="res://UI/Controles.png" id="1_hdt5p"]
+[ext_resource type="Texture2D" uid="uid://w7uqspwmdqq" path="res://UI/Controles.png" id="1_hdt5p"]
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="2_0r6h3"]
 [ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="2_dwwl4"]
 
@@ -28,6 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_0r6h3")
 texture = ExtResource("1_hdt5p")
+expand_mode = 2
 
 [node name="Button" type="TextureButton" parent="."]
 anchors_preset = -1
