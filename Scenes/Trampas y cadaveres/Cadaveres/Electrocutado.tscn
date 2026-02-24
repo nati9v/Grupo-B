@@ -1,14 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://c71881nh10dvu"]
+[gd_scene load_steps=3 format=3 uid="uid://dqlslvqhr7ts"]
 
 [ext_resource type="Texture2D" uid="uid://3iuo0x7k8hql" path="res://arte/SpriteSHOCK.png" id="1_hditu"]
 
-[node name="Conjelado" type="RigidBody2D" groups=["Rigidbody"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufymm"]
+size = Vector2(170, 64)
+
+[node name="Electrocutado" type="RigidBody2D" groups=["Rigidbody"]]
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.5
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9, -79)
-scale = Vector2(0.195801, 0.261719)
+position = Vector2(-2.84217e-14, 7.62939e-06)
+scale = Vector2(0.196, 0.267)
 texture = ExtResource("1_hditu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 80)
+shape = SubResource("RectangleShape2D_ufymm")

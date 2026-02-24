@@ -14,6 +14,29 @@ extends Node
 
 var corpses: Array = []
 
+func register_corpse(corpse_node: Node):
+	corpses.append(corpse_node)
+	emit_signal("corpse_count_changed", corpses.size())
+
+	if corpses.size() > max_corpses:
+		var oldest = corpses.pop_front()
+
+		if is_instance_valid(oldest):
+
+			var target = oldest
+
+			if not target.has_method("remove_corpse_state"):
+				target = target.get_parent()
+
+			if target and target.has_method("remove_corpse_state"):
+				target.remove_corpse_state()
+			else:
+				oldest.queue_free()
+
+		emit_signal("corpse_count_changed", corpses.size())
+
+signal corpse_count_changed(new_count)
+
 func spawn_corpse(position: Vector2, death_type):
 	var scene_to_spawn: PackedScene
 	var delay := 0.0
@@ -46,8 +69,10 @@ func _spawn_with_delay(scene: PackedScene, pos: Vector2, delay: float) -> void:
 	get_tree().current_scene.add_child(corpse)
 
 	corpses.append(corpse)
+	emit_signal("corpse_count_changed", corpses.size())
 
 	if corpses.size() > max_corpses:
 		var oldest = corpses.pop_front()
 		if is_instance_valid(oldest):
 			oldest.queue_free()
+	emit_signal("corpse_count_changed", corpses.size())
