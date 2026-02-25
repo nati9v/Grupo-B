@@ -12,8 +12,8 @@ config_version=5
 
 config/name="Inmortal grupal"
 run/main_scene="uid://dlsver1x6nwsc"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 

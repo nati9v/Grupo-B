@@ -478,21 +478,6 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_60igu")
 
 [sub_resource type="Animation" id="Animation_1o5mm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(6011, 4600)]
-}
-
-[sub_resource type="Animation" id="Animation_td2qg"]
 resource_name = "move"
 length = 5.0
 tracks/0/type = "value"
@@ -505,13 +490,28 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(6011, 4600), Vector2(6011, 3323)]
+"values": [Vector2(6011, 4576), Vector2(6011, 3321)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lnslc"]
+[sub_resource type="Animation" id="Animation_lnslc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6011, 4576)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v5btd"]
 _data = {
-&"RESET": SubResource("Animation_1o5mm"),
-&"move": SubResource("Animation_td2qg")
+&"RESET": SubResource("Animation_lnslc"),
+&"move": SubResource("Animation_1o5mm")
 }
 
 [sub_resource type="Animation" id="Animation_60igu"]
@@ -647,7 +647,7 @@ tile_map_data = PackedByteArray("AAAZAAMAAAAAAAEAAAAZAAIAAAAIAAEAAAA=")
 tile_set = SubResource("TileSet_td2qg")
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_0s2g3")]
-position = Vector2(377, 383)
+position = Vector2(382, 382)
 
 [node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("9_71uec")]
 
@@ -673,15 +673,15 @@ position = Vector2(7552, 1880)
 targets = [NodePath("../Puerta")]
 
 [node name="Botón3" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
-position = Vector2(6011, 4439)
-targets = [NodePath("../Vieja_plataforma_Vertical"), NodePath("../Vieja_plataforma_Vertical")]
+position = Vector2(6012, 4438)
+targets = [NodePath("../Vieja_plataforma_Vertical4")]
 
-[node name="Vieja_plataforma_Vertical" parent="Mecanismos" instance=ExtResource("9_ttxd7")]
-position = Vector2(6011, 4600)
+[node name="Vieja_plataforma_Vertical4" parent="Mecanismos" instance=ExtResource("9_ttxd7")]
+position = Vector2(6011, 4576)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Mecanismos/Vieja_plataforma_Vertical"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mecanismos/Vieja_plataforma_Vertical4"]
 libraries = {
-&"": SubResource("AnimationLibrary_lnslc")
+&"": SubResource("AnimationLibrary_v5btd")
 }
 
 [node name="Botón2" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
