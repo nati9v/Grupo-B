@@ -44,7 +44,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	_kill_player(body)
-			#$ImpactoSFX.play()
+	$ImpactoSFX.play()
 
 
 func _kill_player(body: Node2D):

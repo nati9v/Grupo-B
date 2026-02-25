@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsiek1yp3vs1i"
+path="res://.godot/imported/ascensor-trayecto.wav-645ea8437fa7e23d08f9b8a09c94a340.sample"
+
+[deps]
+
+source_file="res://Musica y SFX/SFX/ascensor-trayecto.wav"
+dest_files=["res://.godot/imported/ascensor-trayecto.wav-645ea8437fa7e23d08f9b8a09c94a340.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
