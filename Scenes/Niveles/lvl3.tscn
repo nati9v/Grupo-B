@@ -1,10 +1,11 @@
-[gd_scene load_steps=42 format=4 uid="uid://diutpt7v0e4xr"]
+[gd_scene load_steps=43 format=4 uid="uid://diutpt7v0e4xr"]
 
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="1_nhc8w"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_u24uy"]
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="2_bqw4l"]
 [ext_resource type="PackedScene" uid="uid://kawp3f3yobva" path="res://Scenes/Trampas y cadaveres/Trampas/ElectricTrap.tscn" id="8_jwn51"]
 [ext_resource type="PackedScene" uid="uid://cwmkcdv36qnnc" path="res://Scenes/pruebeteoprimus.tscn" id="9_wecwy"]
+[ext_resource type="PackedScene" uid="uid://cbsls5v56pvca" path="res://Scenes/Mecanismos/Camara del jugador.tscn" id="10_s12lj"]
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="11_0wrsb"]
 [ext_resource type="PackedScene" uid="uid://cb375vaaw33rg" path="res://Scenes/Mecanismos/Receptor.tscn" id="11_3ufqd"]
 [ext_resource type="PackedScene" uid="uid://yaj5phaghh6l" path="res://Scenes/Mecanismos/Botón.tscn" id="11_86wv7"]
@@ -500,6 +501,21 @@ sources/4 = SubResource("TileSetAtlasSource_jru83")
 sources/5 = SubResource("TileSetAtlasSource_bf2fn")
 sources/6 = SubResource("TileSetAtlasSource_t4jpr")
 
+[sub_resource type="Animation" id="Animation_s12lj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(608, 160)]
+}
+
 [sub_resource type="Animation" id="Animation_6cb47"]
 resource_name = "move"
 length = 34.0
@@ -514,21 +530,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(392, 176), Vector2(616, 176), Vector2(616, 176), Vector2(4712, 176), Vector2(4712, 176)]
-}
-
-[sub_resource type="Animation" id="Animation_s12lj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(608, 160)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6whlv"]
@@ -571,12 +572,7 @@ tile_set = SubResource("TileSet_p6qja")
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("9_wecwy")]
 position = Vector2(5448, 1136)
 
-[node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
-position = Vector2(1.06665, 1.06667)
-scale = Vector2(0.133333, 0.133333)
-zoom = Vector2(0.7, 0.7)
-limit_left = 100
-position_smoothing_enabled = true
+[node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("10_s12lj")]
 
 [node name="Trampas" type="Node2D" parent="."]
 
