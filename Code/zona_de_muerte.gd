@@ -39,7 +39,18 @@ func _on_body_entered(body: Node2D) -> void:
 
 	if not is_active:
 		return
+	if not body.has_method("die"):
+		return
 
+	if body.is_dead:
+		return
+
+	body.die(death_type)
+
+	# 🔒 Desactivar temporalmente la trampa
+	$CollisionShape2D.set_deferred("disabled", true)
+	if body.has_method("die"):
+		body.die(death_type)
 	if not body.is_in_group("player"):
 		return
 

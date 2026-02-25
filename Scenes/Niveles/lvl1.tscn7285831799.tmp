@@ -449,8 +449,6 @@ next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
 position = Vector2(16520, -704)
-fall_multiplier = 1.5
-low_jump_multiplier = 2.0
 
 [node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("11_fa4wx")]
 
