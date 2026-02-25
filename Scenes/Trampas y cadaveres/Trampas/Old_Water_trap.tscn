@@ -1,10 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://xt8wrb56jrpj"]
+[gd_scene load_steps=12 format=3 uid="uid://xt8wrb56jrpj"]
 
 [ext_resource type="Script" uid="uid://bhvffl1y7wfyt" path="res://Scenes/Trampas y cadaveres/Trampas/Water_Trap.gd" id="1_01g0w"]
 [ext_resource type="Texture2D" uid="uid://b1s7lt5sl4rpm" path="res://arte/256/256-agua-p-vieja.png" id="1_gplb8"]
+[ext_resource type="Shader" uid="uid://6gmi3qxgk4ne" path="res://arte/Shaders/Agua.gdshader" id="2_3hncj"]
 [ext_resource type="PackedScene" uid="uid://c5cmkrokx15q6" path="res://Scenes/zona_de_muerte.tscn" id="2_r47nk"]
 [ext_resource type="AudioStream" uid="uid://c8jrlkqk7asub" path="res://Musica y SFX/SFX Trampas/Water Impact 1.wav" id="3_8xthb"]
 [ext_resource type="Texture2D" uid="uid://b70i38mmw2bli" path="res://arte/256/256-hielo-p-vieja.png" id="3_drvqb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3ajpd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rs702"]
+shader = ExtResource("2_3hncj")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_3ajpd")
+shader_parameter/speed = Vector2(0.1, 0.18)
+shader_parameter/wave_strength = 0.1
+shader_parameter/alpha = 0.7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vn44g"]
 size = Vector2(256, 20)
@@ -19,6 +29,7 @@ size = Vector2(258, 20)
 script = ExtResource("1_01g0w")
 
 [node name="WaterSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rs702")
 texture = ExtResource("1_gplb8")
 
 [node name="IceSprite" type="Sprite2D" parent="."]
