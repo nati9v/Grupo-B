@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=49 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="15_1t4bb"]
 [ext_resource type="Texture2D" uid="uid://je14yheomnvg" path="res://UI/icono.png" id="16_tm521"]
 [ext_resource type="PackedScene" uid="uid://rsr3y7ehspr4" path="res://UI-Escenas/Pausa.tscn" id="17_p5lro"]
+[ext_resource type="Script" uid="uid://bufls0fgcgwp4" path="res://Scenes/Niveles/Ingreso de variable.gd" id="17_upjmo"]
 [ext_resource type="PackedScene" uid="uid://cgmhiol40t3we" path="res://UI-Escenas/Ajustes.tscn" id="18_1t4bb"]
 [ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="19_tm521"]
 [ext_resource type="Texture2D" uid="uid://b7bwuq8d3ufgy" path="res://arte/luzluz.png" id="21_irqd3"]
@@ -446,7 +447,7 @@ next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
-position = Vector2(593.31, 392)
+position = Vector2(25976, -1848)
 
 [node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
 modulate = Color(1, 0.766667, 0, 1)
@@ -582,6 +583,7 @@ offset_bottom = 35.8
 theme = ExtResource("13_fnj3v")
 theme_override_font_sizes/font_size = 60
 text = "0"
+script = ExtResource("17_upjmo")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI_Level"]
@@ -697,8 +699,8 @@ texture = ExtResource("21_irqd3")
 script = ExtResource("22_qjt1l")
 
 [node name="FrostTrap" parent="." instance=ExtResource("26_upjmo")]
-position = Vector2(16976, -1208)
-scale = Vector2(2.98, 2.98)
+position = Vector2(17008, -1301)
+scale = Vector2(2.165, 2.165)
 activation_mode = 1
 cooldown_time = 4.0
 
