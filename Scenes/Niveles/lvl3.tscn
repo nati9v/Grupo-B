@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://diutpt7v0e4xr"]
+[gd_scene load_steps=44 format=4 uid="uid://diutpt7v0e4xr"]
 
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="1_nhc8w"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_u24uy"]
