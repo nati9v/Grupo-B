@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dwrj2k6g472qn" path="res://arte/Agregados/Receptor.png" id="2_75c8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gu3fx"]
-size = Vector2(187, 87)
+size = Vector2(86, 87)
 
-[node name="Receptor" type="Area2D" groups=["interactable"]]
-collision_layer = 2
-collision_mask = 2
+[node name="Botón" type="Area2D" groups=["interactable"]]
+collision_layer = 8
+collision_mask = 4
 script = ExtResource("1_75c8h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,6 +18,3 @@ texture = ExtResource("2_75c8h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_gu3fx")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
