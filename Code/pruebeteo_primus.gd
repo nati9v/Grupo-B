@@ -95,11 +95,13 @@ func play_anim(name: String):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Rigidbody"):
+		print("contacto")
 		body.collision_layer = 1
 		body.collision_mask = 1
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Rigidbody"):
+		print("desconectado")
 		body.collision_layer = 2
 		body.collision_mask = 2
 

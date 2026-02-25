@@ -467,7 +467,7 @@ next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
-position = Vector2(25976, -1848)
+position = Vector2(351, 359)
 
 [node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
 modulate = Color(1, 0.766667, 0, 1)

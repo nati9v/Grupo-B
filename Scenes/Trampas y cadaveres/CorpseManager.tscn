@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dq6q82q075ge2" path="res://Code/corpse_manager.gd" id="1_b12sk"]
 [ext_resource type="PackedScene" uid="uid://diukjoswy5kmf" path="res://Scenes/Trampas y cadaveres/Cadaveres/Quemado.tscn" id="2_kmlp6"]
-[ext_resource type="PackedScene" uid="uid://cifwty7rmmxte" path="res://Scenes/Trampas y cadaveres/Cadaveres/Cogelado.tscn" id="2_ur2tv"]
+[ext_resource type="PackedScene" uid="uid://cifwty7rmmxte" path="res://Scenes/Trampas y cadaveres/Cadaveres/Conjelado.tscn" id="2_ur2tv"]
 [ext_resource type="PackedScene" uid="uid://dqlslvqhr7ts" path="res://Scenes/Trampas y cadaveres/Cadaveres/Electrocutado.tscn" id="3_tkr6j"]
 
 [node name="CorpseManager" type="Node2D"]

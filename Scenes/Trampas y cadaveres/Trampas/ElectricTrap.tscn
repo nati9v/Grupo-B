@@ -84,14 +84,14 @@ death_type = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
-position = Vector2(6.075, 1)
+position = Vector2(1.5, 1)
 scale = Vector2(0.4925, 0.306667)
 sprite_frames = SubResource("SpriteFrames_we825")
 autoplay = "default"
-frame_progress = 0.115456
+frame_progress = 0.140489
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(-5.5, -0.5)
 scale = Vector2(0.465, 1)
 shape = SubResource("RectangleShape2D_niu5o")
 

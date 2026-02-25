@@ -1,17 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqlslvqhr7ts"]
+[gd_scene load_steps=3 format=3 uid="uid://dqlslvqhr7ts"]
 
 [ext_resource type="Texture2D" uid="uid://3iuo0x7k8hql" path="res://arte/SpriteSHOCK.png" id="1_hditu"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hditu"]
-friction = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufymm"]
 size = Vector2(170, 64)
 
-[node name="Electrocutado" type="RigidBody2D" groups=["Rigidbody", "electrocutado"]]
+[node name="Electrocutado" type="RigidBody2D" groups=["Rigidbody"]]
 collision_layer = 2
 collision_mask = 2
-physics_material_override = SubResource("PhysicsMaterial_hditu")
 gravity_scale = 0.5
 lock_rotation = true
 

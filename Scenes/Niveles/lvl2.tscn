@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://xvuchbb5o85v"]
+[gd_scene load_steps=35 format=4 uid="uid://xvuchbb5o85v"]
 
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_fpb14"]
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="1_p65l6"]
@@ -15,14 +15,11 @@
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="12_axgr0"]
 [ext_resource type="Texture2D" uid="uid://dcq2couutr3f7" path="res://UI/marco-lvl.png" id="13_twbj7"]
 [ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="14_2cuct"]
-[ext_resource type="Script" uid="uid://bufls0fgcgwp4" path="res://Scenes/Niveles/Ingreso de variable.gd" id="14_06pgq"]
 [ext_resource type="Texture2D" uid="uid://je14yheomnvg" path="res://UI/icono.png" id="15_06pgq"]
 [ext_resource type="PackedScene" uid="uid://rsr3y7ehspr4" path="res://UI-Escenas/Pausa.tscn" id="16_fuqyy"]
 [ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="17_shbv8"]
 [ext_resource type="PackedScene" uid="uid://cgmhiol40t3we" path="res://UI-Escenas/Ajustes.tscn" id="18_71uec"]
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="19_wm374"]
-[ext_resource type="PackedScene" uid="uid://xt8wrb56jrpj" path="res://Scenes/Trampas y cadaveres/Trampas/Old_Water_trap.tscn" id="21_fuqyy"]
-[ext_resource type="PackedScene" uid="uid://dj7ykniqmuo5u" path="res://Scenes/Trampas y cadaveres/Trampas/Frost_trap.tscn" id="23_shbv8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqlhl"]
 
@@ -425,7 +422,7 @@ tile_set = SubResource("TileSet_aq45b")
 [node name="Foreground2" type="TileMapLayer" parent="TileMapLayer"]
 light_mask = 8
 visibility_layer = 8
-tile_map_data = PackedByteArray("AAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAJAAUAAQAAAAAAAAAcAAcAAgAHAAIAAAAfABEAAgAHAAIAAAA=")
+tile_map_data = PackedByteArray("AAAqABAAAQAAAAAAAAAqABEAAQAAAAEAAAArABAAAQAAAAAAAAArABEAAQAAAAEAAAAsABAAAQAAAAAAAAAsABEAAQAAAAEAAAAtABAAAQAAAAAAAAAtABEAAQAAAAEAAAAuABAAAQAAAAAAAAAuABEAAQAAAAEAAAAvABAAAQAAAAAAAAAvABEAAQAAAAEAAAAwABAAAQAAAAAAAAAwABEAAQAAAAEAAAAxABAAAQAAAAAAAAAxABEAAQAAAAEAAAAyABAAAQAAAAAAAAAyABEAAQAAAAEAAAAzABAAAQAAAAAAAAAzABEAAQAAAAEAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAJAAUAAQAAAAAAAAAcAAcAAgAHAAIAAAAfABEAAgAHAAIAAAA=")
 tile_set = SubResource("TileSet_3pm5q")
 
 [node name="Foreground" type="TileMapLayer" parent="TileMapLayer"]
@@ -441,17 +438,13 @@ tile_map_data = PackedByteArray("AAAeAAcAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_3pm5q")
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_0s2g3")]
-position = Vector2(1760, 1128)
+position = Vector2(189, 359)
 
 [node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
 modulate = Color(1, 0.766667, 0, 1)
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(0.5, 0.45)
 limit_left = -160
 position_smoothing_enabled = true
-
-[node name="Checkpoint" parent="." instance=ExtResource("8_53dem")]
-position = Vector2(1161, 1136)
-scale = Vector2(1.125, 1.125)
 
 [node name="Ascensor" parent="." instance=ExtResource("11_rdgwk")]
 position = Vector2(18304, 3968)
@@ -507,7 +500,6 @@ offset_bottom = 35.8
 theme = ExtResource("12_axgr0")
 theme_override_font_sizes/font_size = 60
 text = "0"
-script = ExtResource("14_06pgq")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI_Level"]
@@ -568,44 +560,10 @@ visible = false
 
 [node name="Trampas" type="Node2D" parent="."]
 
-[node name="Old_WaterTrap" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(10880, 4352)
-
 [node name="Spike_trap" parent="Trampas" instance=ExtResource("8_am47m")]
 position = Vector2(17024, 4224)
 
 [node name="Spike_trap2" parent="Trampas" instance=ExtResource("8_am47m")]
 position = Vector2(17280, 4232)
-
-[node name="Old_WaterTrap2" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(11136, 4352)
-
-[node name="Old_WaterTrap3" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(11392, 4352)
-
-[node name="Old_WaterTrap4" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(11648, 4353)
-
-[node name="Old_WaterTrap5" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(11904, 4352)
-
-[node name="Old_WaterTrap6" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(12160, 4352)
-
-[node name="Old_WaterTrap7" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(12416, 4352)
-
-[node name="Old_WaterTrap8" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(12672, 4352)
-
-[node name="Old_WaterTrap9" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(12928, 4352)
-
-[node name="Old_WaterTrap10" parent="Trampas" instance=ExtResource("21_fuqyy")]
-position = Vector2(13184, 4352)
-
-[node name="FrostTrap" parent="." instance=ExtResource("23_shbv8")]
-position = Vector2(10421, 3472)
-scale = Vector2(1.44, 1.44)
 
 [connection signal="pressed" from="UI_Level/TextureButton" to="." method="_on_texture_button_pressed"]
