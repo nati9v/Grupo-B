@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=49 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
@@ -28,10 +28,6 @@
 [ext_resource type="Script" uid="uid://c0nb04m1t4wgt" path="res://Code/luces.gd" id="22_qjt1l"]
 [ext_resource type="PackedScene" uid="uid://btygccneo307t" path="res://Scenes/Mecanismos/plataforma_Vertical.tscn" id="24_lqu48"]
 [ext_resource type="PackedScene" uid="uid://dj7ykniqmuo5u" path="res://Scenes/Trampas y cadaveres/Trampas/Frost_trap.tscn" id="26_upjmo"]
-[ext_resource type="Texture2D" uid="uid://d3lbngl8e5mpt" path="res://arte/grafitti-1.png" id="29_7rhwb"]
-[ext_resource type="Texture2D" uid="uid://du8qcut7mcib7" path="res://arte/grafitti-2.png" id="30_nwcld"]
-[ext_resource type="Texture2D" uid="uid://dpv2tlayaauq0" path="res://arte/grafitti-4.png" id="31_nfl5d"]
-[ext_resource type="Texture2D" uid="uid://dsude2dsvil3q" path="res://arte/grafitti-3.png" id="32_nwcld"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqlhl"]
 
@@ -467,7 +463,7 @@ next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
-position = Vector2(351, 359)
+position = Vector2(19448, -1432)
 
 [node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
 modulate = Color(1, 0.766667, 0, 1)
@@ -736,48 +732,6 @@ position = Vector2(15488, 504)
 libraries = {
 &"": SubResource("AnimationLibrary_upjmo")
 }
-
-[node name="Grafittis" type="Node2D" parent="."]
-position = Vector2(620, 331)
-scale = Vector2(0.272878, 0.272879)
-
-[node name="Grafitti-1" type="Sprite2D" parent="Grafittis"]
-modulate = Color(1, 1, 1, 0.694118)
-texture = ExtResource("29_7rhwb")
-
-[node name="Grafitti-2" type="Sprite2D" parent="Grafittis"]
-modulate = Color(1, 1, 1, 0.831373)
-position = Vector2(3019.66, -377.457)
-scale = Vector2(1.0112, 1.0112)
-texture = ExtResource("30_nwcld")
-
-[node name="Grafitti-4" type="Sprite2D" parent="Grafittis"]
-modulate = Color(1, 1, 1, 0.811765)
-position = Vector2(1469.52, 7.32935)
-scale = Vector2(2.0454, 2.0454)
-texture = ExtResource("31_nfl5d")
-
-[node name="Grafitti-3" type="Sprite2D" parent="Grafittis"]
-modulate = Color(1, 1, 1, 0.886275)
-position = Vector2(10946.3, -2132.82)
-scale = Vector2(1.16403, 1.16403)
-texture = ExtResource("32_nwcld")
-
-[node name="Grafitti-5" type="Sprite2D" parent="Grafittis"]
-modulate = Color(1, 1, 1, 0.682353)
-self_modulate = Color(0.533333, 0.180392, 0.145098, 1)
-position = Vector2(-1788.34, 65.9633)
-rotation = -0.947398
-scale = Vector2(0.682685, 0.682685)
-texture = ExtResource("31_nfl5d")
-
-[node name="Grafitti-6" type="Sprite2D" parent="Grafittis"]
-modulate = Color(1, 1, 1, 0.682353)
-self_modulate = Color(0.533333, 0.180392, 0.145098, 1)
-position = Vector2(28038.1, -1715.05)
-rotation = -2.23433
-scale = Vector2(0.682685, 0.682685)
-texture = ExtResource("31_nfl5d")
 
 [connection signal="mouse_entered" from="UI_Level/TextureButton" to="Menu Pausa" method="_on_texture_button_mouse_entered"]
 [connection signal="pressed" from="UI_Level/TextureButton" to="Menu Pausa" method="_on_texture_button_pressed"]
