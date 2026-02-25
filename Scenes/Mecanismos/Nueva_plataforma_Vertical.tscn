@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://btpb7tipyy4ug"]
+
+[ext_resource type="Script" uid="uid://cjh08pqun7k58" path="res://Scenes/Mecanismos/move_plataform.gd" id="1_ki70f"]
+[ext_resource type="Texture2D" uid="uid://cqup3bxojuns1" path="res://arte/256/tileset-256-parte-nueva.png" id="2_ki70f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4gls"]
+size = Vector2(204, 12.125)
+
+[node name="Nueva_plataforma_Vertical" type="AnimatableBody2D"]
+script = ExtResource("1_ki70f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_ki70f")
+region_enabled = true
+region_rect = Rect2(1536, 1440, 256, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.9375)
+shape = SubResource("RectangleShape2D_q4gls")
+one_way_collision = true
