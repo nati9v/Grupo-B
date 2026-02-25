@@ -15,7 +15,7 @@
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="12_axgr0"]
 [ext_resource type="Texture2D" uid="uid://dcq2couutr3f7" path="res://UI/marco-lvl.png" id="13_twbj7"]
 [ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="14_2cuct"]
-[ext_resource type="Script" uid="uid://bufls0fgcgwp4" path="res://Scenes/Niveles/Ingreso de variable.gd" id="14_06pgq"]
+[ext_resource type="Script" path="res://Scenes/Niveles/Ingreso de variable.gd" id="14_06pgq"]
 [ext_resource type="Texture2D" uid="uid://je14yheomnvg" path="res://UI/icono.png" id="15_06pgq"]
 [ext_resource type="PackedScene" uid="uid://rsr3y7ehspr4" path="res://UI-Escenas/Pausa.tscn" id="16_fuqyy"]
 [ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="17_shbv8"]
