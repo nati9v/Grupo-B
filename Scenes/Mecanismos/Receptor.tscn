@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cb375vaaw33rg"]
 
-[ext_resource type="Script" uid="uid://cjhp7p1mvjbdd" path="res://Scenes/Mecanismos/electric_receptor.gd" id="1_75c8h"]
+[ext_resource type="Script" path="res://Scenes/Mecanismos/electric_receptor.gd" id="1_75c8h"]
 [ext_resource type="Texture2D" uid="uid://dwrj2k6g472qn" path="res://arte/Agregados/Receptor.png" id="2_75c8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gu3fx"]
-size = Vector2(187, 87)
+size = Vector2(71, 69)
 
 [node name="Receptor" type="Area2D" groups=["interactable"]]
 collision_layer = 2
@@ -16,7 +16,7 @@ position = Vector2(0, 88)
 texture = ExtResource("2_75c8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_gu3fx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
