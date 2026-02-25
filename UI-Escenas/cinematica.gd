@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	AudioManager.play_music("")
+	AudioManager.music_player.stop()
 
 	
 func _on_button_pressed():
