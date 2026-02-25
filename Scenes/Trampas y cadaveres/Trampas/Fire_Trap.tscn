@@ -128,8 +128,8 @@ death_type = 3
 scale = Vector2(0.467, 0.467)
 sprite_frames = SubResource("SpriteFrames_x5q5g")
 autoplay = "default"
-frame = 14
-frame_progress = 1.0
+frame = 9
+frame_progress = 0.89512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 2
