@@ -500,6 +500,21 @@ sources/4 = SubResource("TileSetAtlasSource_jru83")
 sources/5 = SubResource("TileSetAtlasSource_bf2fn")
 sources/6 = SubResource("TileSetAtlasSource_t4jpr")
 
+[sub_resource type="Animation" id="Animation_s12lj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(608, 160)]
+}
+
 [sub_resource type="Animation" id="Animation_6cb47"]
 resource_name = "move"
 length = 34.0
@@ -514,21 +529,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(392, 176), Vector2(616, 176), Vector2(616, 176), Vector2(4712, 176), Vector2(4712, 176)]
-}
-
-[sub_resource type="Animation" id="Animation_s12lj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(608, 160)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6whlv"]
@@ -565,11 +565,7 @@ tile_map_data = PackedByteArray("AAAZAAYAAwAFAAAAAAAaAAYAAwAFAAAAAAAbAAYAAwAFAAA
 tile_set = SubResource("TileSet_p6qja")
 
 [node name="items" type="TileMapLayer" parent="."]
-<<<<<<< HEAD
-tile_map_data = PackedByteArray("AAAXAAQABAAAAAAAAABGAO7/BAAAAAAAAAAuAO7/BAAAAAAAAAA=")
-=======
 tile_map_data = PackedByteArray("AAAuAO7/BAAAAAAAAABGAO7/BAAAAAAAAAA=")
->>>>>>> main
 tile_set = SubResource("TileSet_p6qja")
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("9_wecwy")]
