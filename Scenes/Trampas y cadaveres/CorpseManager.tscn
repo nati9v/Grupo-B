@@ -10,3 +10,4 @@ script = ExtResource("1_b12sk")
 corpse_fuego = ExtResource("2_kmlp6")
 corpse_electro = ExtResource("3_tkr6j")
 corpse_hielo = ExtResource("2_ur2tv")
+delay_electro = 1.0

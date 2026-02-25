@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=50 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://8rtcgs3pf50y" path="res://Scenes/Mecanismos/Ascensor.tscn" id="8_lqu48"]
 [ext_resource type="Shader" uid="uid://6gmi3qxgk4ne" path="res://arte/Shaders/Agua.gdshader" id="9_buwil"]
 [ext_resource type="PackedScene" uid="uid://dscrrr8tyxoxk" path="res://Scenes/Mecanismos/Checkpoint.tscn" id="10_oidrm"]
+[ext_resource type="PackedScene" uid="uid://cbsls5v56pvca" path="res://Scenes/Mecanismos/Camara del jugador.tscn" id="11_fa4wx"]
 [ext_resource type="PackedScene" uid="uid://yaj5phaghh6l" path="res://Scenes/Mecanismos/Botón.tscn" id="11_irqd3"]
 [ext_resource type="PackedScene" uid="uid://xt8wrb56jrpj" path="res://Scenes/Trampas y cadaveres/Trampas/Old_Water_trap.tscn" id="13_ba4u5"]
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="13_fnj3v"]
@@ -471,12 +472,7 @@ next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 visibility_layer = 2
 position = Vector2(647, 345)
 
-[node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
-modulate = Color(1, 0.766667, 0, 1)
-zoom = Vector2(0.7, 0.7)
-limit_left = -160
-limit_bottom = 800
-position_smoothing_enabled = true
+[node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("11_fa4wx")]
 
 [node name="Pinchos" type="Node2D" parent="."]
 

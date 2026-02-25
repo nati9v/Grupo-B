@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://c7oaigl1fcqm0" path="res://Musica y SFX/Musica/lvl3_musica.mp3" id="2_s12lj"]
 [ext_resource type="PackedScene" uid="uid://kawp3f3yobva" path="res://Scenes/Trampas y cadaveres/Trampas/ElectricTrap.tscn" id="8_jwn51"]
 [ext_resource type="PackedScene" uid="uid://cwmkcdv36qnnc" path="res://Scenes/pruebeteoprimus.tscn" id="9_wecwy"]
+[ext_resource type="PackedScene" uid="uid://cbsls5v56pvca" path="res://Scenes/Mecanismos/Camara del jugador.tscn" id="10_s12lj"]
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="11_0wrsb"]
 [ext_resource type="PackedScene" uid="uid://cb375vaaw33rg" path="res://Scenes/Mecanismos/Receptor.tscn" id="11_3ufqd"]
 [ext_resource type="PackedScene" uid="uid://yaj5phaghh6l" path="res://Scenes/Mecanismos/Botón.tscn" id="11_86wv7"]
@@ -573,12 +574,7 @@ tile_set = SubResource("TileSet_p6qja")
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("9_wecwy")]
 position = Vector2(5448, 1136)
 
-[node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
-position = Vector2(1.06665, 1.06667)
-scale = Vector2(0.133333, 0.133333)
-zoom = Vector2(0.7, 0.7)
-limit_left = 100
-position_smoothing_enabled = true
+[node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("10_s12lj")]
 
 [node name="Trampas" type="Node2D" parent="."]
 

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cwmkcdv36qnnc" path="res://Scenes/pruebeteoprimus.tscn" id="7_0s2g3"]
 [ext_resource type="PackedScene" uid="uid://dscrrr8tyxoxk" path="res://Scenes/Mecanismos/Checkpoint.tscn" id="8_53dem"]
 [ext_resource type="PackedScene" uid="uid://b82aevq2bs8dj" path="res://Scenes/Trampas y cadaveres/Trampas/New_Spike_trap.tscn" id="8_am47m"]
+[ext_resource type="PackedScene" uid="uid://cbsls5v56pvca" path="res://Scenes/Mecanismos/Camara del jugador.tscn" id="9_71uec"]
 [ext_resource type="PackedScene" uid="uid://btygccneo307t" path="res://Scenes/Mecanismos/plataforma_Vertical.tscn" id="9_ttxd7"]
 [ext_resource type="PackedScene" uid="uid://yaj5phaghh6l" path="res://Scenes/Mecanismos/Botón.tscn" id="10_rdgwk"]
 [ext_resource type="PackedScene" uid="uid://8rtcgs3pf50y" path="res://Scenes/Mecanismos/Ascensor.tscn" id="11_rdgwk"]
@@ -443,13 +444,9 @@ tile_map_data = PackedByteArray("AAAeAAcAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_3pm5q")
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_0s2g3")]
-position = Vector2(1760, 1128)
+position = Vector2(18296, 3680)
 
-[node name="Camera2D" type="Camera2D" parent="Pruebeteoprimus"]
-modulate = Color(1, 0.766667, 0, 1)
-zoom = Vector2(0.7, 0.7)
-limit_left = -160
-position_smoothing_enabled = true
+[node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("9_71uec")]
 
 [node name="Checkpoint" parent="." instance=ExtResource("8_53dem")]
 position = Vector2(1161, 1136)
