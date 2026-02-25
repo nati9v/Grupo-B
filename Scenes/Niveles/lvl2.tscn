@@ -672,6 +672,10 @@ position = Vector2(8256, 4481)
 position = Vector2(7552, 1880)
 targets = [NodePath("../Puerta")]
 
+[node name="Botón3" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
+position = Vector2(6011, 4439)
+targets = [NodePath("../Vieja_plataforma_Vertical"), NodePath("../Vieja_plataforma_Vertical")]
+
 [node name="Vieja_plataforma_Vertical" parent="Mecanismos" instance=ExtResource("9_ttxd7")]
 position = Vector2(6011, 4600)
 
@@ -680,9 +684,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_lnslc")
 }
 
-[node name="Botón3" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
-position = Vector2(6011, 4439)
-targets = [NodePath("../Vieja_plataforma_Vertical"), NodePath("../Vieja_plataforma_Vertical")]
+[node name="Botón2" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
+position = Vector2(4229, 3163)
+targets = [NodePath("../Vieja_plataforma_Vertical2")]
 
 [node name="Vieja_plataforma_Vertical2" parent="Mecanismos" instance=ExtResource("9_ttxd7")]
 position = Vector2(4225, 3320)
@@ -692,9 +696,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_td2qg")
 }
 
-[node name="Botón2" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
-position = Vector2(4229, 3163)
-targets = [NodePath("../Vieja_plataforma_Vertical2")]
+[node name="Botón" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
+position = Vector2(3200, 2400)
+targets = [NodePath("../Vieja_plataforma_Vertical3"), NodePath("../Vieja_plataforma_Vertical3"), NodePath("../Vieja_plataforma_Vertical3")]
 
 [node name="Vieja_plataforma_Vertical3" parent="Mecanismos" instance=ExtResource("9_ttxd7")]
 position = Vector2(3200, 2552)
@@ -703,10 +707,6 @@ position = Vector2(3200, 2552)
 libraries = {
 &"": SubResource("AnimationLibrary_eornu")
 }
-
-[node name="Botón" parent="Mecanismos" node_paths=PackedStringArray("targets") instance=ExtResource("10_rdgwk")]
-position = Vector2(3200, 2400)
-targets = [NodePath("../Vieja_plataforma_Vertical3"), NodePath("../Vieja_plataforma_Vertical3"), NodePath("../Vieja_plataforma_Vertical3")]
 
 [node name="UI_Level" type="CanvasLayer" parent="."]
 
