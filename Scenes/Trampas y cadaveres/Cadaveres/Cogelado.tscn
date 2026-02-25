@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cifwty7rmmxte"]
 
-[ext_resource type="Texture2D" uid="uid://bgsuoauh8fi0r" path="res://arte/SpriteFROZEN.png" id="2_alwwl"]
+[ext_resource type="Texture2D" uid="uid://bgsuoauh8fi0r" path="res://arte/SpriteFROZEN.png" id="1_3cwn4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufymm"]
 size = Vector2(170, 240)
 
-[node name="Conjelado" type="RigidBody2D" groups=["Rigidbody"]]
+[node name="Congelado" type="RigidBody2D" groups=["Rigidbody", "congelado"]]
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.5
@@ -14,7 +14,7 @@ lock_rotation = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.84217e-14, 7.62939e-06)
 scale = Vector2(0.196, 0.267)
-texture = ExtResource("2_alwwl")
+texture = ExtResource("1_3cwn4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
