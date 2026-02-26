@@ -66,6 +66,8 @@ func _emit_death_debug(death_type):
 			print("El jugador murió 💀")
 
 func _spawn_corpse(pos: Vector2, death_type):
+	for trap in get_tree().get_nodes_in_group("death_zone"):
+		trap.reactivate()
 	CorpseManager.spawn_corpse(pos, death_type)
 
 func start_death_sequence(player: Node2D, death_type):

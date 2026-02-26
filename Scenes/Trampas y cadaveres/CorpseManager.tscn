@@ -12,5 +12,5 @@ corpse_electro = ExtResource("3_tkr6j")
 corpse_hielo = ExtResource("2_ur2tv")
 delay_fuego = 3.0
 delay_electro = 3.0
-delay_hielo = 3.0
+delay_hielo = 1.0
 delay_default = 3.0
