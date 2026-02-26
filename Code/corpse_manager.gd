@@ -12,18 +12,6 @@ extends Node
 @export var delay_hielo := 0.5
 @export var delay_default := 0.3
 
-func get_delay_for_type(death_type) -> float:
-
-	match death_type:
-		DeathTypes.DeathType.CONGELADO:
-			return delay_hielo
-		DeathTypes.DeathType.ELECTROCUTADO:
-			return delay_electro
-		DeathTypes.DeathType.FUEGO:
-			return delay_fuego
-		_:
-			return delay_default
-
 var corpses: Array = []
 
 func register_corpse(corpse_node: Node):
@@ -48,8 +36,6 @@ func register_corpse(corpse_node: Node):
 		emit_signal("corpse_count_changed", corpses.size())
 
 signal corpse_count_changed(new_count)
-
-
 
 func spawn_corpse(position: Vector2, death_type):
 	var scene_to_spawn: PackedScene

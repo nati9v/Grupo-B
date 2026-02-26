@@ -13,15 +13,9 @@ var interact_target: Area2D = null
 var is_locked := false
 var can_move := true
 var was_on_floor := false
-var original_layer : int
-var original_mask : int
 
 @export var fall_multiplier: float = 1.5
 @export var low_jump_multiplier: float = 2.0
-
-func _ready():
-	original_layer = collision_layer
-	original_mask = collision_mask
 
 func reset_state():
 	velocity = Vector2.ZERO
@@ -35,10 +29,6 @@ func take_damage():
 	checkpoint_manager.respawn_player(self)
 
 func _physics_process(delta: float) -> void:
-	
-	if is_dead:
-		return
-	
 	# --- COYOTE TIME ---
 	if is_on_floor():
 		coyote_timer = coyote_time
@@ -111,7 +101,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Rigidbody"):
 		body.collision_layer = 2
-		body.collision_mask = 2  
+		body.collision_mask = 2
 
 
 func lock():
@@ -131,44 +121,3 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 func play_footstep():
 	$Correr.pitch_scale = randf_range(0.92, 1.08)
 	$Correr.play()
-
-var is_dead := false
-
-func die(death_type):
-	print("ENTRÓ A DIE")
-	if is_dead:
-		return
-	 
-	is_dead = true
-	can_move = false
-	velocity = Vector2.ZERO
-	
-	# 🔒 Desactivar colisiones
-	collision_layer = 0
-	collision_mask = 0
-	
-
-	# 🔒 Detener física completamente
-	set_physics_process(false)
-	
-	# Reproducir animación según tipo
-	play_death_animation(death_type)
-
-	# Delegar al manager
-	checkpoint_manager.start_death_sequence(self, death_type)
-
-func play_death_animation(death_type):
-	
-	print("Reproduciendo animación de muerte")
-
-	match death_type:
-		DeathTypes.DeathType.CONGELADO:
-			$AnimatedSprite2D.play("congelado")
-		DeathTypes.DeathType.ELECTROCUTADO:
-			$AnimatedSprite2D.play("electrocutado")
-		DeathTypes.DeathType.FUEGO:
-			$AnimatedSprite2D.play("death_fire")
-		DeathTypes.DeathType.CLAVADO:
-			$AnimatedSprite2D.play("death_spike")
-		_:
-			$AnimatedSprite2D.play("death_default")
