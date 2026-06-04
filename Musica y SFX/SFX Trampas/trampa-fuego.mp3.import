@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjvg4vfql4x1p"
+path="res://.godot/imported/trampa-fuego.mp3-ef274aec60f61e29290d36fb9a52fe01.mp3str"
+
+[deps]
+
+source_file="res://Musica y SFX/SFX Trampas/trampa-fuego.mp3"
+dest_files=["res://.godot/imported/trampa-fuego.mp3-ef274aec60f61e29290d36fb9a52fe01.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

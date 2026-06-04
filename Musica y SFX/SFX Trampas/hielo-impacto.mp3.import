@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4mmvqmdp010n"
+path="res://.godot/imported/hielo-impacto.mp3-1ea3b6b3cf2eff99997c8fb35e2a73fd.mp3str"
+
+[deps]
+
+source_file="res://Musica y SFX/SFX Trampas/hielo-impacto.mp3"
+dest_files=["res://.godot/imported/hielo-impacto.mp3-1ea3b6b3cf2eff99997c8fb35e2a73fd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

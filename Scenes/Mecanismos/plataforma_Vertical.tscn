@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://btygccneo307t"]
+[gd_scene load_steps=7 format=3 uid="uid://btygccneo307t"]
 
 [ext_resource type="Script" uid="uid://cjh08pqun7k58" path="res://Scenes/Mecanismos/move_plataform.gd" id="1_bui4o"]
 [ext_resource type="Texture2D" uid="uid://dhbrr5igljml3" path="res://arte/Agregados/ascensores-viejos.png" id="2_bui4o"]
+[ext_resource type="AudioStream" uid="uid://pd2lnrrw825g" path="res://Musica y SFX/SFX/ascensor-inicio.wav" id="3_r8qj8"]
+[ext_resource type="AudioStream" uid="uid://bsiek1yp3vs1i" path="res://Musica y SFX/SFX/ascensor-trayecto.wav" id="4_t1xyf"]
+[ext_resource type="AudioStream" uid="uid://bkdjhu25ewj2l" path="res://Musica y SFX/SFX/ascensor-fin.wav" id="5_c4tcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4gls"]
 size = Vector2(204, 8.25)
@@ -19,3 +22,18 @@ region_rect = Rect2(256, 112, 256, 160)
 position = Vector2(0, 11.875)
 shape = SubResource("RectangleShape2D_q4gls")
 one_way_collision = true
+
+[node name="Ascensor-inicio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_r8qj8")
+volume_db = 7.0
+bus = &"SFX"
+
+[node name="Ascensor-loop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_t1xyf")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="Ascensor-fin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_c4tcx")
+volume_db = 10.0
+bus = &"SFX"

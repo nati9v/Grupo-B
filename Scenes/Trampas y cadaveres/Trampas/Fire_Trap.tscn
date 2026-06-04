@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bljwdt4b80oel" path="res://Code/zona_de_muerte.gd" id="1_77dy0"]
 [ext_resource type="Texture2D" uid="uid://co3bgrv8d5026" path="res://Assets/Trampas/sprites-trampa-fuego.png" id="2_p52gh"]
-[ext_resource type="AudioStream" uid="uid://b75r0c6u0xwo2" path="res://Musica y SFX/SFX/trampa-fuego1.mp3" id="3_0j7ox"]
+[ext_resource type="AudioStream" uid="uid://cjvg4vfql4x1p" path="res://Musica y SFX/SFX Trampas/trampa-fuego.mp3" id="4_fh80u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77dy0"]
 atlas = ExtResource("2_p52gh")
@@ -132,12 +132,11 @@ frame = 14
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 visibility_layer = 2
 shape = SubResource("RectangleShape2D_hh0fp")
 
-[node name="ImpactSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_0j7ox")
+[node name="ImpactoSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fh80u")
 pitch_scale = 1.03
 autoplay = true
 bus = &"SFX"
