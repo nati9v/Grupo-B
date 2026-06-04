@@ -619,11 +619,12 @@ debug_color = Color(0.317393, 0.625452, 0, 0.42)
 
 [node name="Correr" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_3gy24")
-volume_db = 24.0
+volume_db = 5.0
 bus = &"SFX"
 
 [node name="Aterrizar" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_kpgbv")
+volume_db = 3.0
 bus = &"SFX"
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

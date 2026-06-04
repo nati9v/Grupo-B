@@ -198,6 +198,7 @@ text = "CONTROLES"
 flat = true
 
 [node name="ayuda" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_rkwl0")
 theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.752941, 0.85098, 1)
@@ -227,7 +228,10 @@ texture_normal = SubResource("AtlasTexture_0bijb")
 texture_pressed = SubResource("AtlasTexture_d8pxv")
 texture_hover = SubResource("AtlasTexture_4quc6")
 
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/musica" to="." method="_on_musica_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/musica" to="." method="_on_musica_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/sfx" to="." method="_on_sfx_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/sfx" to="." method="_on_sfx_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/controles" to="." method="_on_controles_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/controles" to="." method="_on_controles_pressed"]
 [connection signal="pressed" from="cerrar" to="." method="_on_cerrar_pressed"]

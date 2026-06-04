@@ -1,7 +1,8 @@
-[gd_scene load_steps=50 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=58 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
+[ext_resource type="AudioStream" uid="uid://o2r5uki44phs" path="res://Musica y SFX/Musica/Lvl1-music.mp3" id="2_1cbkt"]
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="2_4g8w4"]
 [ext_resource type="Texture2D" uid="uid://dhk0y0qhtymyk" path="res://arte/Agregados/A puerta abierta.png" id="3_j56ed"]
 [ext_resource type="Texture2D" uid="uid://udcou3xah073" path="res://arte/Agregados/A puerta cerrada.png" id="4_oidrm"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d1n2rygfwu0bu" path="res://Assets/Tilesets/Cajas-256.png" id="7_on1fg"]
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="7_upjmo"]
 [ext_resource type="PackedScene" uid="uid://8rtcgs3pf50y" path="res://Scenes/Mecanismos/Ascensor.tscn" id="8_lqu48"]
+[ext_resource type="Shader" uid="uid://6gmi3qxgk4ne" path="res://arte/Shaders/Agua.gdshader" id="9_buwil"]
 [ext_resource type="PackedScene" uid="uid://dscrrr8tyxoxk" path="res://Scenes/Mecanismos/Checkpoint.tscn" id="10_oidrm"]
 [ext_resource type="PackedScene" uid="uid://cbsls5v56pvca" path="res://Scenes/Mecanismos/Camara del jugador.tscn" id="11_fa4wx"]
 [ext_resource type="PackedScene" uid="uid://yaj5phaghh6l" path="res://Scenes/Mecanismos/Botón.tscn" id="11_irqd3"]
@@ -28,6 +30,10 @@
 [ext_resource type="Script" uid="uid://c0nb04m1t4wgt" path="res://Code/luces.gd" id="22_qjt1l"]
 [ext_resource type="PackedScene" uid="uid://btygccneo307t" path="res://Scenes/Mecanismos/plataforma_Vertical.tscn" id="24_lqu48"]
 [ext_resource type="PackedScene" uid="uid://dj7ykniqmuo5u" path="res://Scenes/Trampas y cadaveres/Trampas/Frost_trap.tscn" id="26_upjmo"]
+[ext_resource type="Texture2D" uid="uid://nf6w3qj37kya" path="res://arte/Grafittis/grafitti-1.png" id="30_nfl5d"]
+[ext_resource type="Texture2D" uid="uid://8gdfpmt8ijpe" path="res://arte/Grafittis/grafitti-2.png" id="31_3metu"]
+[ext_resource type="Texture2D" uid="uid://daiagupajxkju" path="res://arte/Grafittis/grafitti-3.png" id="32_85vfc"]
+[ext_resource type="Texture2D" uid="uid://b5ihrdj7dc5tf" path="res://arte/Grafittis/grafitti-4.png" id="33_ka84i"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iqlhl"]
 
@@ -368,6 +374,16 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_6chae")
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fa4wx"]
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cbkt"]
+shader = ExtResource("9_buwil")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_fa4wx")
+shader_parameter/speed = Vector2(0.1, 0.18)
+shader_parameter/wave_strength = 0.105
+shader_parameter/alpha = 0.7
+
 [sub_resource type="Animation" id="Animation_lqu48"]
 length = 0.001
 tracks/0/type = "value"
@@ -415,6 +431,7 @@ region = Rect2(426, 142, 142, 142)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_oidrm")
+level_music = ExtResource("2_1cbkt")
 
 [node name="TileMapLayer" type="Node2D" parent="."]
 
@@ -435,7 +452,12 @@ tile_map_data = PackedByteArray("AACeAP3/AAAAAAEAAACfAPz/AAACAAEAAAAZAAMAAAAAAAE
 tile_set = SubResource("TileSet_lgb3t")
 
 [node name="trampas" type="TileMapLayer" parent="TileMapLayer"]
-tile_map_data = PackedByteArray("AAARAAIAAQAAAAEAAAASAAIAAQAAAAEAAAASAAMAAQAAAAEAAAARAAMAAQAAAAEAAAAkAAIAAQAAAAEAAAAjAAIAAQAAAAEAAAAjAAMAAQAAAAEAAAAkAAMAAQAAAAEAAAA=")
+visible = false
+tile_set = SubResource("TileSet_iqlhl")
+
+[node name="Agua" type="TileMapLayer" parent="TileMapLayer"]
+material = SubResource("ShaderMaterial_1cbkt")
+tile_map_data = PackedByteArray("AAASAAMAAQAAAAEAAAARAAMAAQAAAAEAAAARAAIAAQAAAAEAAAASAAIAAQAAAAEAAAAjAAIAAQAAAAEAAAAkAAIAAQAAAAEAAAAkAAMAAQAAAAEAAAAjAAMAAQAAAAEAAAA=")
 tile_set = SubResource("TileSet_iqlhl")
 
 [node name="trampas_hielo" type="TileMapLayer" parent="TileMapLayer"]
@@ -703,6 +725,7 @@ position = Vector2(15488, -672)
 targets = [NodePath("../plataforma_Vertical")]
 
 [node name="plataforma_Vertical" parent="." instance=ExtResource("24_lqu48")]
+visible = false
 position = Vector2(15488, 504)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma_Vertical"]
@@ -710,4 +733,51 @@ libraries = {
 &"": SubResource("AnimationLibrary_upjmo")
 }
 
+[node name="Grafittis" type="Node2D" parent="."]
+
+[node name="Grafitti-1" type="Sprite2D" parent="Grafittis"]
+modulate = Color(1, 1, 1, 0.705882)
+self_modulate = Color(0.843198, 0.81921, 0.870547, 1)
+position = Vector2(649, 268)
+scale = Vector2(0.317887, 0.317887)
+texture = ExtResource("30_nfl5d")
+
+[node name="Grafitti-2" type="Sprite2D" parent="Grafittis"]
+modulate = Color(1, 1, 1, 0.705882)
+self_modulate = Color(0.843198, 0.81921, 0.870547, 1)
+position = Vector2(1395, 329)
+scale = Vector2(0.317887, 0.317887)
+texture = ExtResource("31_3metu")
+
+[node name="Grafitti-3" type="Sprite2D" parent="Grafittis"]
+modulate = Color(1, 1, 1, 0.705882)
+self_modulate = Color(0.843198, 0.81921, 0.870547, 1)
+position = Vector2(3598, -262)
+scale = Vector2(0.317887, 0.317887)
+texture = ExtResource("32_85vfc")
+
+[node name="Grafitti-4" type="Sprite2D" parent="Grafittis"]
+modulate = Color(1, 1, 1, 0.705882)
+self_modulate = Color(0.843198, 0.81921, 0.870547, 1)
+position = Vector2(1064, 346)
+scale = Vector2(0.477889, 0.477889)
+texture = ExtResource("33_ka84i")
+
+[node name="Grafitti-5" type="Sprite2D" parent="Grafittis"]
+modulate = Color(1, 1, 1, 0.705882)
+self_modulate = Color(0.756863, 0.223529, 0.121569, 1)
+position = Vector2(133, 365)
+rotation = -0.84268
+scale = Vector2(0.191886, 0.191886)
+texture = ExtResource("33_ka84i")
+
+[node name="Grafitti-6" type="Sprite2D" parent="Grafittis"]
+modulate = Color(1, 1, 1, 0.705882)
+self_modulate = Color(0.756863, 0.223529, 0.121569, 1)
+position = Vector2(8288, -83.9998)
+rotation = 0.722845
+scale = Vector2(0.191886, 0.191886)
+texture = ExtResource("33_ka84i")
+
+[connection signal="mouse_entered" from="UI_Level/TextureButton" to="Menu Pausa" method="_on_texture_button_mouse_entered"]
 [connection signal="pressed" from="UI_Level/TextureButton" to="Menu Pausa" method="_on_texture_button_pressed"]

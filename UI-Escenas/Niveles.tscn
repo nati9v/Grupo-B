@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://buhmn7uyogah0"]
+[gd_scene load_steps=22 format=3 uid="uid://buhmn7uyogah0"]
 
 [ext_resource type="Texture2D" uid="uid://bmm2vxq1i07cb" path="res://UI/Main Menu/marco.png" id="1_5gke6"]
 [ext_resource type="Script" uid="uid://cnor8iar7i2pv" path="res://Scripts/UI-niveles.gd" id="1_awca0"]
 [ext_resource type="Theme" uid="uid://ya6ijv5sbqr0" path="res://new_theme.tres" id="2_0gs42"]
+[ext_resource type="AudioStream" uid="uid://d3xd8a6mbf2hb" path="res://Musica y SFX/Musica/Menu-music_1.mp3" id="2_tp3e8"]
 [ext_resource type="Texture2D" uid="uid://c1iercgyces3w" path="res://UI/Botones/fondo-btn-lvls.png" id="3_f6lde"]
 [ext_resource type="Texture2D" uid="uid://dtsk5rorx57vu" path="res://UI/Botones/Disabled-fondo-btn-lvls.png" id="4_8r7gm"]
 [ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="5_tdns5"]
@@ -76,6 +77,7 @@ region = Rect2(0, 142, 142, 142)
 
 [node name="Niveles" type="CanvasLayer"]
 script = ExtResource("1_awca0")
+level_music = ExtResource("2_tp3e8")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -324,7 +326,11 @@ theme_override_colors/font_color = Color(0.317647, 0.752941, 0.85098, 1)
 theme_override_font_sizes/font_size = 50
 text = "NIVELES"
 
+[connection signal="mouse_entered" from="HBoxContainer/Lvl1" to="." method="_on_lvl_1_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/lvl2" to="." method="_on_lvl_2_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/lvl3" to="." method="_on_lvl_3_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
