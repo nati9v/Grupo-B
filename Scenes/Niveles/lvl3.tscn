@@ -573,8 +573,6 @@ tile_set = SubResource("TileSet_p6qja")
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("9_wecwy")]
 position = Vector2(5448, 1136)
-fall_multiplier = 1.5
-low_jump_multiplier = 2.0
 
 [node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("10_s12lj")]
 
