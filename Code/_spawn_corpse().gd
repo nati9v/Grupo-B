@@ -6,5 +6,7 @@ func _emit_death_debug(death_type):
 			print("El jugador fue electrocutado ⚡")
 		DeathTypes.DeathType.AHOGADO:
 			print("El jugador se ahogó")
+		DeathTypes.DeathType.CLAVADO:
+			print("El jugador clavó en pinchos")
 		_:
 			print("El jugador murió 💀")

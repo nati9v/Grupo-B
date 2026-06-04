@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cwmkcdv36qnnc"]
+[gd_scene load_steps=88 format=3 uid="uid://cwmkcdv36qnnc"]
 
 [ext_resource type="Script" uid="uid://s8156ivbbhn1" path="res://Code/pruebeteo_primus.gd" id="1_4wb1q"]
 [ext_resource type="Texture2D" uid="uid://bwed8gaxhgwqo" path="res://Assets/Character sheets/Idle_Spritesheet.png" id="2_sgw5y"]
@@ -73,6 +73,14 @@ atlas = ExtResource("3_tagxn")
 region = Rect2(2500, 0, 500, 500)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ea6eo"]
+atlas = ExtResource("3_tagxn")
+region = Rect2(3000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7k0u"]
+atlas = ExtResource("3_tagxn")
+region = Rect2(2500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3tbu"]
 atlas = ExtResource("3_tagxn")
 region = Rect2(3000, 0, 500, 500)
 
@@ -355,6 +363,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_a7k0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3tbu")
+}],
+"loop": true,
+"name": &"CLAVADO",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_biwn1")
 }, {
 "duration": 1.0,
@@ -565,7 +584,6 @@ z_index = 4
 scale = Vector2(7.5, 7.5)
 collision_layer = 3
 script = ExtResource("1_4wb1q")
-respawn_grace_time = 1.0
 speed = 500.0
 jump_velocity = -650.0
 gravedad = 700.0
@@ -577,7 +595,7 @@ shape = SubResource("CapsuleShape2D_a5bfq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.065, 0.065)
 sprite_frames = SubResource("SpriteFrames_msl61")
-animation = &"ELECTROCUTADO"
+animation = &"CLAVADO"
 
 [node name="Indicador de plataforma" type="Area2D" parent="."]
 visible = false

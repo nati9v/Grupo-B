@@ -29,7 +29,7 @@ texture = ExtResource("3_q2d0m")
 death_type = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zonademuerte"]
-position = Vector2(0, -56)
+position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_vn44g")
 debug_color = Color(0.973068, 0, 0.436614, 0.42)
 
