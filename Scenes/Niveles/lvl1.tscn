@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=58 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]

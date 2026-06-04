@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://xvuchbb5o85v"]
+[gd_scene load_steps=40 format=4 uid="uid://xvuchbb5o85v"]
 
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_fpb14"]
 [ext_resource type="Texture2D" uid="uid://dlih8k406n57h" path="res://arte/256/tileset-256-parte-vieja.png" id="1_p65l6"]
