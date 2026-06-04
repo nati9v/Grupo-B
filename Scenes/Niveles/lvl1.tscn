@@ -448,7 +448,7 @@ next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
-position = Vector2(25976, -1848)
+position = Vector2(16400, -688)
 
 [node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("11_fa4wx")]
 
@@ -695,9 +695,9 @@ texture = ExtResource("21_irqd3")
 script = ExtResource("22_qjt1l")
 
 [node name="FrostTrap" parent="." instance=ExtResource("26_upjmo")]
-position = Vector2(17008, -1301)
+position = Vector2(16984, -1104)
 scale = Vector2(2.165, 2.165)
-activation_mode = 1
+death_type = 2
 cooldown_time = 4.0
 
 [node name="Botón" parent="." node_paths=PackedStringArray("targets") instance=ExtResource("11_irqd3")]

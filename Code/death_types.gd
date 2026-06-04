@@ -6,5 +6,6 @@ enum DeathType {
 	CONGELADO, #1
 	ELECTROCUTADO, #2
 	FUEGO, #3
-	CLAVADO #4
+	CLAVADO, #4
+	AHOGADO #5
 }

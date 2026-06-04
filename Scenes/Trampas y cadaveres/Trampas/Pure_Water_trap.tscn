@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://jcq7u80fq52h"]
+[gd_scene load_steps=9 format=3 uid="uid://ddfv2slfutwfj"]
 
 [ext_resource type="Texture2D" uid="uid://ba5siyexrvjhq" path="res://arte/256/256-agua-p-nueva.png" id="1_2v36t"]
 [ext_resource type="Script" uid="uid://bhvffl1y7wfyt" path="res://Scenes/Trampas y cadaveres/Trampas/Water_Trap.gd" id="1_q2d0m"]
@@ -16,6 +16,7 @@ size = Vector2(287.25, 20)
 size = Vector2(258, 20)
 
 [node name="Old_WaterTrap" type="Node2D" groups=["water_traps"]]
+z_index = 10
 script = ExtResource("1_q2d0m")
 
 [node name="WaterSprite" type="Sprite2D" parent="."]
@@ -25,6 +26,7 @@ texture = ExtResource("1_2v36t")
 texture = ExtResource("3_q2d0m")
 
 [node name="Zonademuerte" parent="." instance=ExtResource("2_5n2j4")]
+death_type = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zonademuerte"]
 position = Vector2(0, -56)

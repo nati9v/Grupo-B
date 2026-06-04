@@ -16,6 +16,7 @@ size = Vector2(287.25, 20)
 size = Vector2(258, 20)
 
 [node name="Old_WaterTrap" type="Node2D" groups=["water_traps"]]
+z_index = 10
 script = ExtResource("1_01g0w")
 
 [node name="WaterSprite" type="Sprite2D" parent="."]
@@ -25,6 +26,7 @@ texture = ExtResource("1_gplb8")
 texture = ExtResource("3_drvqb")
 
 [node name="Zonademuerte" parent="." instance=ExtResource("2_r47nk")]
+death_type = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zonademuerte"]
 position = Vector2(0, -56)

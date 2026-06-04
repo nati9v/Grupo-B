@@ -76,3 +76,14 @@ func _spawn_with_delay(scene: PackedScene, pos: Vector2, delay: float) -> void:
 		if is_instance_valid(oldest):
 			oldest.queue_free()
 	emit_signal("corpse_count_changed", corpses.size())
+
+func get_delay_for_type(death_type: int) -> float:
+	match death_type:
+		DeathTypes.DeathType.FUEGO:
+			return delay_fuego
+		DeathTypes.DeathType.ELECTROCUTADO:
+			return delay_electro
+		DeathTypes.DeathType.CONGELADO:
+			return delay_hielo
+		_:
+			return delay_default

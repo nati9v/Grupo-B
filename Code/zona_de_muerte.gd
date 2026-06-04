@@ -42,16 +42,18 @@ func _on_body_entered(body: Node2D) -> void:
 
 	if not body.is_in_group("player"):
 		return
-
+	
+	if body.has_method("can_die") and not body.can_die():
+		return
+	
 	_kill_player(body)
 			#$ImpactoSFX.play()
 
 
 func _kill_player(body: Node2D):
 
-	print("Jugador murió por:", death_type)
-
-	checkpoint_manager.handle_death(body, death_type, spawn_corpse)
+	if body.has_method("die"):
+		body.die(death_type, spawn_corpse)
 
 	if get_parent().has_method("on_local_death"):
 		get_parent().on_local_death()
@@ -116,3 +118,9 @@ func start_cycle():
 func _on_animated_sprite_2d_animation_finished():
 	if activation_mode == ActivationMode.BUTTON:
 		deactivate()
+
+
+func reactivate():
+	if activation_mode == ActivationMode.ALWAYS_ON:
+		is_active = true
+		$CollisionShape2D.disabled = false

@@ -10,12 +10,7 @@ func set_checkpoint(pos: Vector2):
 	has_checkpoint = true
 
 func handle_death(player: Node2D, death_type, spawn_corpse: bool):
-	_emit_death_debug(death_type)
-
-	if spawn_corpse:
-		_spawn_corpse(player.global_position, death_type)
-
-	respawn_player(player)
+	start_death_sequence(player, death_type, spawn_corpse)
 
 func respawn_player(player: Node2D):
 	if has_checkpoint:
@@ -36,3 +31,15 @@ func _spawn_corpse(pos: Vector2, death_type):
 	for trap in get_tree().get_nodes_in_group("death_zone"):
 		trap.reactivate()
 	CorpseManager.spawn_corpse(pos, death_type)
+
+func start_death_sequence(player: Node2D, death_type, spawn_corpse: bool = true) -> void:
+	_emit_death_debug(death_type)
+
+	if spawn_corpse:
+		_spawn_corpse(player.global_position, death_type)
+
+	var delay: float = CorpseManager.get_delay_for_type(death_type)
+
+	await get_tree().create_timer(delay + 1.0).timeout
+
+	respawn_player(player)
