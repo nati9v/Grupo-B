@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="15_1t4bb"]
 [ext_resource type="Texture2D" uid="uid://je14yheomnvg" path="res://UI/icono.png" id="16_tm521"]
 [ext_resource type="PackedScene" uid="uid://rsr3y7ehspr4" path="res://UI-Escenas/Pausa.tscn" id="17_p5lro"]
-[ext_resource type="Script" path="res://Scenes/Niveles/Ingreso de variable.gd" id="17_upjmo"]
+[ext_resource type="Script" uid="uid://bufls0fgcgwp4" path="res://Scenes/Niveles/Ingreso de variable.gd" id="17_upjmo"]
 [ext_resource type="PackedScene" uid="uid://cgmhiol40t3we" path="res://UI-Escenas/Ajustes.tscn" id="18_1t4bb"]
 [ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="19_tm521"]
 [ext_resource type="Texture2D" uid="uid://b7bwuq8d3ufgy" path="res://arte/luzluz.png" id="21_irqd3"]
