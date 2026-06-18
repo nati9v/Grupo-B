@@ -486,7 +486,7 @@ next_level_path = "res://Scenes/Niveles/lvl2.tscn"
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
-position = Vector2(649.001, 353)
+position = Vector2(649.001, 382.255)
 
 [node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("11_fa4wx")]
 
@@ -625,6 +625,7 @@ script = ExtResource("17_upjmo")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI_Level"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -738,8 +739,9 @@ texture = ExtResource("21_irqd3")
 script = ExtResource("22_qjt1l")
 
 [node name="FrostTrap" parent="." instance=ExtResource("26_upjmo")]
-position = Vector2(16984, -1104)
-scale = Vector2(2.165, 2.165)
+position = Vector2(17016, -1224)
+scale = Vector2(2.955, 2.955)
+activation_mode = 1
 
 [node name="Grafittis" type="Node2D" parent="."]
 

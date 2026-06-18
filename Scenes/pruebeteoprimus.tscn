@@ -595,7 +595,7 @@ shape = SubResource("CapsuleShape2D_a5bfq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.065, 0.065)
 sprite_frames = SubResource("SpriteFrames_msl61")
-animation = &"CLAVADO"
+animation = &"1"
 
 [node name="Indicador de plataforma" type="Area2D" parent="."]
 visible = false

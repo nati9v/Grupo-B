@@ -41,7 +41,7 @@ position = Vector2(0, -17.765)
 death_type = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zonademuerte"]
-position = Vector2(0, -46.235)
+position = Vector2(0, -0.235001)
 shape = SubResource("RectangleShape2D_vn44g")
 debug_color = Color(0.973068, 0, 0.436614, 0.42)
 
