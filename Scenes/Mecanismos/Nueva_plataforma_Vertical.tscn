@@ -13,10 +13,11 @@ size = Vector2(204, 12.125)
 script = ExtResource("1_ki70f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -67)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_ki70f")
 region_enabled = true
-region_rect = Rect2(1536, 1440, 256, 88)
+region_rect = Rect2(1280, 1280, 256, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.9375)
