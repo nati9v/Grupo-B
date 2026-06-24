@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://diukjoswy5kmf"]
 
-[ext_resource type="Texture2D" uid="uid://yty3fhmarc5h" path="res://Assets/Character sheets/Fire_Spritesheet.png" id="1_d2gyf"]
+[ext_resource type="Texture2D" uid="uid://ca8gp1fvvtk2c" path="res://Assets/Character sheets/Fire_Spritesheet.png" id="1_d2gyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufymm"]
 size = Vector2(62, 30)
 
-[node name="Quemado" type="RigidBody2D" groups=["Rigidbody"]]
+[node name="Quemado" type="RigidBody2D" groups=["Rigidbody", "corpse", "quemado"]]
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 2

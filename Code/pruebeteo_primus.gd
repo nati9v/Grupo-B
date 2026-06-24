@@ -44,13 +44,14 @@ func respawn_at(pos: Vector2):
 	can_move = true
 	collision_layer = original_layer
 	collision_mask = original_mask
-	set_platform_indicator_enabled(true)
 	set_physics_process(true)
 
 	reset_state()
 
 	await get_tree().create_timer(respawn_grace_time).timeout
+
 	is_respawning = false
+	set_platform_indicator_enabled(true)
 
 func take_damage():
 	checkpoint_manager.respawn_player(self)
@@ -123,11 +124,22 @@ func play_anim(name: String):
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if is_dead or is_respawning:
+		return
+
+
 	if body.is_in_group("Rigidbody"):
 		body.collision_layer = 1
 		body.collision_mask = 1
 
+
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	if is_dead or is_respawning:
+		return
+
+	if body.is_in_group("corpse"):
+		return
+
 	if body.is_in_group("Rigidbody"):
 		body.collision_layer = 2
 		body.collision_mask = 2

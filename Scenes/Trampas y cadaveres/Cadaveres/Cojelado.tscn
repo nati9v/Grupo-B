@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cifwty7rmmxte"]
 
-[ext_resource type="Texture2D" uid="uid://bs8y5vwy5vtf2" path="res://Assets/Character sheets/Ice_spritesheet.png" id="1_3cwn4"]
+[ext_resource type="Texture2D" uid="uid://bs8y5vwy5vtf2" path="res://Assets/Character sheets/Ice_spritesheet.png" id="1_mtysv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufymm"]
 size = Vector2(170, 204.828)
 
-[node name="Congelado" type="RigidBody2D" groups=["Rigidbody", "congelado"]]
+[node name="Congelado" type="RigidBody2D" groups=["Rigidbody", "congelado", "corpse"]]
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.5
@@ -13,7 +13,7 @@ lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.605, 0.605)
-texture = ExtResource("1_3cwn4")
+texture = ExtResource("1_mtysv")
 region_enabled = true
 region_rect = Rect2(500, 1000, 500, 500)
 

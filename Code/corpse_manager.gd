@@ -66,6 +66,9 @@ func _spawn_with_delay(scene: PackedScene, pos: Vector2, delay: float) -> void:
 
 	var corpse = scene.instantiate()
 	corpse.global_position = pos
+	corpse.add_to_group("corpse")
+	get_tree().current_scene.add_child(corpse)
+	corpse.global_position = pos
 	get_tree().current_scene.add_child(corpse)
 
 	corpses.append(corpse)

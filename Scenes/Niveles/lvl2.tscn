@@ -647,7 +647,7 @@ tile_map_data = PackedByteArray("AAAZAAMAAAAAAAEAAAAZAAIAAAAIAAEAAAA=")
 tile_set = SubResource("TileSet_td2qg")
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_0s2g3")]
-position = Vector2(382, 382)
+position = Vector2(8992, 4481)
 
 [node name="CamaraDelJugador" parent="Pruebeteoprimus" instance=ExtResource("9_71uec")]
 
@@ -852,6 +852,7 @@ color = Color(0.954854, 0.724014, 0.627975, 1)
 energy = 4.8
 texture = ExtResource("28_td2qg")
 script = ExtResource("29_1o5mm")
+titilar = 3
 
 [node name="PointLight2D5" type="PointLight2D" parent="."]
 position = Vector2(7035, 3837.12)
