@@ -68,8 +68,6 @@ func _spawn_with_delay(scene: PackedScene, pos: Vector2, delay: float) -> void:
 	corpse.global_position = pos
 	corpse.add_to_group("corpse")
 	get_tree().current_scene.add_child(corpse)
-	corpse.global_position = pos
-	get_tree().current_scene.add_child(corpse)
 
 	corpses.append(corpse)
 	emit_signal("corpse_count_changed", corpses.size())
@@ -90,3 +88,11 @@ func get_delay_for_type(death_type: int) -> float:
 			return delay_hielo
 		_:
 			return delay_default
+
+func reset_corpses() -> void:
+	for corpse in corpses:
+		if is_instance_valid(corpse):
+			corpse.queue_free()
+
+	corpses.clear()
+	emit_signal("corpse_count_changed", corpses.size())

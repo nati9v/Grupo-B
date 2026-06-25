@@ -35,11 +35,16 @@ func _spawn_corpse(pos: Vector2, death_type):
 func start_death_sequence(player: Node2D, death_type, spawn_corpse: bool = true) -> void:
 	_emit_death_debug(death_type)
 
+	var death_pos := player.global_position
+
 	if spawn_corpse:
-		_spawn_corpse(player.global_position, death_type)
+		CorpseManager.spawn_corpse(death_pos, death_type)
 
-	var delay: float = CorpseManager.get_delay_for_type(death_type)
+	var type_delay := 0.0
 
-	await get_tree().create_timer(delay + 1.0).timeout
+	if CorpseManager.has_method("get_delay_for_type"):
+		type_delay = CorpseManager.get_delay_for_type(death_type)
+
+	await get_tree().create_timer(type_delay + 1.2).timeout
 
 	respawn_player(player)

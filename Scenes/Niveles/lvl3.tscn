@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://diutpt7v0e4xr"]
+[gd_scene load_steps=49 format=4 uid="uid://diutpt7v0e4xr"]
 
 [ext_resource type="Texture2D" uid="uid://f81qy126f374" path="res://arte/256/tileset-256-transición.png" id="1_nhc8w"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_u24uy"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://bld4djgat0uyi" path="res://UI/Botones/p-btns.png" id="13_k3qf1"]
 [ext_resource type="Texture2D" uid="uid://je14yheomnvg" path="res://UI/icono.png" id="14_86wv7"]
 [ext_resource type="PackedScene" uid="uid://rsr3y7ehspr4" path="res://UI-Escenas/Pausa.tscn" id="15_3ufqd"]
+[ext_resource type="Script" uid="uid://bufls0fgcgwp4" path="res://Scenes/Niveles/Ingreso de variable.gd" id="15_3wsoa"]
 [ext_resource type="PackedScene" uid="uid://47bsateleo1u" path="res://UI-Escenas/Controles.tscn" id="16_k3qf1"]
 [ext_resource type="PackedScene" uid="uid://cgmhiol40t3we" path="res://UI-Escenas/Ajustes.tscn" id="17_86wv7"]
+[ext_resource type="Script" uid="uid://b3i1pa8tlmjsl" path="res://Scripts/level_transition.gd" id="19_4qkvm"]
 [ext_resource type="PackedScene" uid="uid://btpb7tipyy4ug" path="res://Scenes/Mecanismos/Nueva_plataforma_Vertical.tscn" id="20_ao8pk"]
 [ext_resource type="PackedScene" uid="uid://dscrrr8tyxoxk" path="res://Scenes/Mecanismos/Checkpoint.tscn" id="21_6cb47"]
 [ext_resource type="Texture2D" uid="uid://b1s7lt5sl4rpm" path="res://arte/256/256-agua-p-vieja.png" id="21_i2wx6"]
@@ -602,6 +604,7 @@ offset_bottom = 35.8
 theme = ExtResource("11_0wrsb")
 theme_override_font_sizes/font_size = 60
 text = "0"
+script = ExtResource("15_3wsoa")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI_Level"]
@@ -649,6 +652,20 @@ offset_bottom = 8.24001
 scale = Vector2(1.57506, 1.57506)
 texture = ExtResource("14_86wv7")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Inicio del nivel" type="CanvasLayer" parent="UI_Level"]
+script = ExtResource("19_4qkvm")
+fade_in_time = 1.5
+
+[node name="ColorRect" type="ColorRect" parent="UI_Level/Inicio del nivel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Pausa" parent="." instance=ExtResource("15_3ufqd")]

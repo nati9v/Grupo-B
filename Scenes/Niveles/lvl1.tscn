@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://dc3t7y1u0ss7t"]
+[gd_scene load_steps=62 format=4 uid="uid://dc3t7y1u0ss7t"]
 
 [ext_resource type="Texture2D" uid="uid://dlr6n2lbqxub1" path="res://arte/Agregados/A boton.png" id="1_4bcgh"]
 [ext_resource type="Script" uid="uid://c76drvgw54h7h" path="res://Scenes/Niveles/Ininitial_Respawn.gd" id="1_oidrm"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://c0nb04m1t4wgt" path="res://Code/luces.gd" id="22_qjt1l"]
 [ext_resource type="PackedScene" uid="uid://btygccneo307t" path="res://Scenes/Mecanismos/plataforma_Vertical.tscn" id="24_lqu48"]
 [ext_resource type="PackedScene" uid="uid://dj7ykniqmuo5u" path="res://Scenes/Trampas y cadaveres/Trampas/Frost_trap.tscn" id="26_upjmo"]
+[ext_resource type="Script" uid="uid://b3i1pa8tlmjsl" path="res://Scripts/level_transition.gd" id="27_jj2kb"]
 [ext_resource type="Texture2D" uid="uid://nf6w3qj37kya" path="res://arte/Grafittis/grafitti-1.png" id="30_nfl5d"]
 [ext_resource type="Texture2D" uid="uid://8gdfpmt8ijpe" path="res://arte/Grafittis/grafitti-2.png" id="31_3metu"]
 [ext_resource type="Texture2D" uid="uid://daiagupajxkju" path="res://arte/Grafittis/grafitti-3.png" id="32_85vfc"]
@@ -483,6 +484,8 @@ tile_set = SubResource("TileSet_iqlhl")
 [node name="Ascensor" parent="." instance=ExtResource("8_lqu48")]
 position = Vector2(25981, -1665)
 next_level_path = "res://Scenes/Niveles/lvl2.tscn"
+transition_time = 3.0
+transition_rect_path = NodePath("../UI_Level/Final del nivel/ColorRect")
 
 [node name="Pruebeteoprimus" parent="." instance=ExtResource("7_6chae")]
 visibility_layer = 2
@@ -670,6 +673,44 @@ offset_bottom = 8.24001
 scale = Vector2(1.57506, 1.57506)
 texture = ExtResource("16_tm521")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Final del nivel" type="CanvasLayer" parent="UI_Level"]
+
+[node name="ColorRect" type="ColorRect" parent="UI_Level/Final del nivel"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Inicio del nivel" type="CanvasLayer" parent="UI_Level"]
+
+[node name="ColorRect" type="ColorRect" parent="UI_Level/Inicio del nivel"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Inicio del nivel2" type="CanvasLayer" parent="UI_Level"]
+script = ExtResource("27_jj2kb")
+fade_in_time = 1.5
+
+[node name="ColorRect" type="ColorRect" parent="UI_Level/Inicio del nivel2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Menu Pausa" parent="." instance=ExtResource("17_p5lro")]

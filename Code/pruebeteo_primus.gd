@@ -127,22 +127,21 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_dead or is_respawning:
 		return
 
-
 	if body.is_in_group("Rigidbody"):
 		body.collision_layer = 1
 		body.collision_mask = 1
 
+		if body is RigidBody2D:
+			body.sleeping = false
+
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if is_dead or is_respawning:
-		return
-
-	if body.is_in_group("corpse"):
-		return
-
 	if body.is_in_group("Rigidbody"):
 		body.collision_layer = 2
 		body.collision_mask = 2
+
+		if body is RigidBody2D:
+			body.sleeping = false
 
 
 func lock():
@@ -167,13 +166,14 @@ func die(death_type: int, spawn_corpse: bool = true):
 	if is_dead:
 		return
 
+	reset_platform_indicator_bodies()
+
 	is_dead = true
 	can_move = false
 	velocity = Vector2.ZERO
 
 	collision_layer = 0
 	collision_mask = 0
-	set_platform_indicator_enabled(false)
 
 	set_physics_process(false)
 
@@ -213,3 +213,15 @@ func set_platform_indicator_enabled(enabled: bool) -> void:
 		for child in area.get_children():
 			if child is CollisionShape2D:
 				child.set_deferred("disabled", not enabled)
+
+func reset_platform_indicator_bodies() -> void:
+	if not has_node("Indicador de plataforma"):
+		return
+
+	for body in $"Indicador de plataforma".get_overlapping_bodies():
+		if body.is_in_group("Rigidbody"):
+			body.collision_layer = 2
+			body.collision_mask = 2
+
+			if body is RigidBody2D:
+				body.sleeping = false
